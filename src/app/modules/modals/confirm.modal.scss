@@ -1,0 +1,14 @@
+.confirm {
+
+  &-title {
+    border-bottom: 1px solid #d1d1d1;
+    margin: .4em 0;
+  }
+
+  &-buttons {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

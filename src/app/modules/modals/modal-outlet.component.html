@@ -1,0 +1,20 @@
+<div class="modal"
+  [hidden]="!visible"
+  [ngClass]="{'modal--backdropDisabled': options.backdropDisabled}"
+  (click)="close()">
+    <div class="modal__content"
+      [ngStyle]="{
+        'animation': options.animation,
+        'height': options.height,
+        'width': options.width,
+        'position': options.position?.type ? options.position?.type : 'relative',
+        'top': options.position?.top ? options.position?.top : 'auto',
+        'bottom': options.position?.bottom ? options.position?.bottom : 'auto',
+        'left': options.position?.left ? options.position?.left : 'auto',
+        'right': options.position?.right ? options.position?.right : 'auto'
+      }"
+      (click)="$event.stopPropagation()">
+        <span class="modal__close" [hidden]="options.closeDisabled" (click)="close()">&times;</span>
+        <ng-container #content></ng-container>
+    </div>
+</div>

@@ -1,0 +1,477 @@
+@import 'open-color';
+
+// TODO: Checkboxes
+// TODO: Radio Buttons
+// TODO: Indeterminate Progress
+// TODO: Meters
+
+$primary: $oc-blue-5;
+$primary-hover: lighten($primary, 5%);
+$primary-active: darken($primary, 10%);
+
+$secondary: $oc-gray-7;
+$secondary-hover: lighten($secondary, 5%);
+$secondary-active: darken($secondary, 10%);
+
+$success: $oc-green-7;
+$error: $oc-red-8;
+$warning: $oc-yellow-4;
+$info: $oc-cyan-4;
+
+
+* { box-sizing: border-box; }
+
+html, body {
+  color: $oc-gray-7;
+  font-family: 'Montserrat';
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.breadcrumb {
+  background-color: $oc-gray-2;
+  border-radius: 4px;
+  color: #707070;
+  font-size: 13px;
+  letter-spacing: 1.3px;
+  list-style: none;
+  padding: .75rem 2rem;
+  margin: 0;
+  width: 100%;
+
+  li {
+    display: inline;
+
+    a {
+      color: $primary;
+    }
+  }
+  li+li:before {
+    color: $oc-gray-5;
+    content: "/\00a0";
+    margin: 0 0.5rem;
+  }
+}
+
+.pagination {
+  color: #707070;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  li {
+    border: 1px solid $oc-gray-3;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    &:hover {
+      background-color: $oc-gray-1;
+    }
+  }
+  .active {
+    background-color: $oc-gray-3;
+    border-color: $oc-gray-3;
+    &:hover {
+      background-color: $oc-gray-3;
+      border-color: $oc-gray-3;
+    }
+  }
+  .disabled {
+    background-color: $oc-gray-4;
+    border-color: $oc-gray-4;
+    cursor: not-allowed;
+    &:hover {
+      background-color: $oc-gray-4;
+      border-color: $oc-gray-4;
+    }
+  }
+}
+
+hr {
+  background-color: $oc-gray-4;
+  border: 0;
+  border-radius: 2px;
+  color: $oc-gray-4;
+  height: 2px;
+  width: 100%;
+}
+
+img, iframe {
+  max-width: 100%;
+}
+
+blockquote {
+  background-color: $oc-yellow-0;
+  border-radius: 4px;
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+figure {
+  margin: 2rem 1rem;
+}
+
+figcaption {
+  font-weight: 300;
+}
+
+details, summary {
+  outline: none;
+}
+
+a {
+  color: $primary-active;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+
+  &:link, &:visited {
+    color: $primary-active;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+mark {
+  background-color: $oc-yellow-0;
+}
+
+pre {
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+pre, code {
+  background-color: $oc-yellow-0;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+table {
+  border: none;
+  border-collapse: collapse;
+  outline: none;
+  text-align: left;
+  min-width: 480px;
+  width: calc(100% - 1px); // -1px fixes scroll issue with .tableContainer
+
+  caption {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+  th, td {
+    padding: 1rem;
+  }
+  th {
+    letter-spacing: 1px;
+  }
+  td {
+    border: 2px solid $oc-gray-4;
+  }
+  thead {
+    background-color: $primary;
+    color: white;
+    text-align: center;
+  }
+  tr:nth-child(even) {
+    background-color: $oc-gray-1;
+  }
+  tfoot {
+    background-color: $oc-gray-3;
+  }
+}
+
+fieldset {
+  border-radius: 4px;
+  border: 2px solid $oc-gray-4;
+}
+
+label {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+legend {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+input, select, textarea {
+  background: transparent;
+  border: 1px solid $oc-gray-4;
+  border-radius: 2px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .1);
+  font-family: 'Montserrat';
+  font-size: 16px;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+  transition: box-shadow 0.25s ease-in-out;
+}
+
+input[type="color"] {
+  padding: 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+input[type="range"]:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: $oc-gray-2;
+  border: none;
+  border-radius: 100px;
+  box-shadow: none;
+  cursor: pointer;
+  height: 7px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 1px 4px 0px rgba(152, 152, 152, .75);
+  cursor: pointer;
+  height: 22px;
+  margin-top: -8px;
+  width: 22px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: $oc-gray-2;
+}
+
+input[type="range"]::-moz-range-track {
+  background: $oc-gray-2;
+  border: none;
+  border-radius: 100px;
+  box-shadow: none;
+  cursor: pointer;
+  height: 7px;
+}
+
+input[type=range]::-moz-range-thumb {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 1px 4px 0px rgba(152, 152, 152, .75);
+  cursor: pointer;
+  height: 22px;
+  margin-top: -8px;
+  width: 22px;
+}
+
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-radius: 100px;
+  border-width: 22px 0;
+  box-shadow: none;
+  color: transparent;
+  cursor: pointer;
+  height: 7px;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: $primary;
+  border: none;
+  border-radius: 100px;
+  box-shadow: none;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: $oc-gray-2;
+  border: none;
+  border-radius: 100px;
+  box-shadow: none;
+}
+
+input[type="range"]::-ms-thumb {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 1px 4px 0px rgba(152, 152, 152, .75);
+  cursor: pointer;
+  height: 22px;
+  margin-top: -3px;
+  width: 22px;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+  background: $primary-hover;
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+  background: $oc-gray-2;
+}
+
+input:focus, select:focus, textarea:focus {
+  box-shadow: none;
+  outline: none !important;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .1), 0px 0px 6px $primary;
+  border-color: $primary;
+}
+
+input:invalid, select:invalid, textarea:invalid {
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .1), 0px 0px 6px $error;
+  border-color: $error;
+}
+
+progress, progress[value] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid $oc-gray-4;
+  border-radius: 2px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .1);
+  color: $primary;
+  height: 2rem;
+}
+
+progress::-ms-fill {
+  background-color: $primary;
+  border: none;
+  border-radius: 1px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .1);
+  color: $primary;
+}
+
+progress::-moz-progress-bar {
+  background-color: $primary;
+  border-radius: 1px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .1);
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: $primary;
+  border-radius: 1px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .1);
+}
+
+@mixin button($color) {
+  appearance: none;
+  background-color: $color;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  outline: none;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.4s ease-in-out;
+
+  &:hover {
+    background-color: lighten($color, 10%);
+  }
+  &:active {
+    background-color: darken($color, 10%);
+  }
+}
+
+@mixin button-hollow($color) {
+  @include button($color);
+  background-color: transparent;
+  border: 1px solid $color;
+  color: $color;
+  &:hover {
+    background-color: $color;
+    color: white;
+  }
+  &:active {
+    background-color: darken($color, 10%);
+    color: white;
+  }
+}
+
+.button {
+  @include button($primary);
+
+  &-secondary {
+    @include button($secondary);
+  }
+  &-success {
+    @include button($success);
+  }
+  &-error {
+    @include button($error);
+  }
+  &-warning {
+    @include button($warning);
+    color: $oc-gray-8;
+  }
+  &-info {
+    @include button($info);
+  }
+}
+
+.button-hollow {
+  @include button-hollow($primary);
+
+  &-secondary {
+    @include button-hollow($secondary);
+  }
+  &-success {
+    @include button-hollow($success);
+  }
+  &-error {
+    @include button-hollow($error);
+  }
+  &-warning {
+    @include button-hollow($warning);
+    color: $oc-gray-8;
+    &:hover {
+      color: $oc-gray-8;
+    }
+    &:active {
+      color: $oc-gray-8;
+    }
+  }
+  &-info {
+    @include button-hollow($info);
+  }
+}
+
+/*
+How to style meters cross browser
+https://css-tricks.com/html5-meter-element/
+*/
