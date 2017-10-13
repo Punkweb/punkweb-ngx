@@ -1,0 +1,40 @@
+@import '../../../scss/open-color';
+
+.nav {
+  background-color: $oc-gray-8;
+  box-shadow: 0 2px 4px rgba($oc-gray-9, .5);
+  color: $oc-gray-2;
+  width: 100vw;
+  z-index: 10;
+  &-content {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+  }
+  &-left {
+    flex: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 1rem;
+  }
+  &-right {
+    flex: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 1rem;
+  }
+  &-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}

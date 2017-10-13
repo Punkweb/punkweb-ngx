@@ -8,8 +8,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { ModalsModule } from './modules/modals/modals.module';
 import { SharedModule } from './shared/shared.module';
 
+// Main app
 import { AppComponent } from './app.component';
-import { HomeRoute } from './routes/home/home.route';
+
+// Routes
+import {
+  Error404Route,
+  HomeRoute,
+  LoginRoute,
+} from './routes';
+
+// Components
+import {
+  NavComponent,
+  SidebarComponent,
+} from './components';
+
+// Services
 
 @NgModule({
   imports: [
@@ -23,11 +38,18 @@ import { HomeRoute } from './routes/home/home.route';
   ],
   declarations: [
     AppComponent,
+    // Routes
+    Error404Route,
     HomeRoute,
+    LoginRoute,
+    // Components
+    NavComponent,
+    SidebarComponent,
   ],
   bootstrap: [AppComponent],
   providers: [
     {provide: APP_BASE_HREF, useValue : '/' }
+    // Services
   ],
   entryComponents: [],
 })

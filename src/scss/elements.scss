@@ -22,9 +22,11 @@ $info: $oc-cyan-4;
 * { box-sizing: border-box; }
 
 html, body {
+  background-color: $oc-gray-1;
   color: $oc-gray-7;
   font-family: 'Montserrat';
   font-size: 100%;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   min-width: 320px;
@@ -37,10 +39,16 @@ html, body {
   width: 100%;
 }
 
+.container--sidebar {
+  margin-left: 14rem;
+  padding: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans';
-  font-weight: bold;
+  font-weight: 500;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 .breadcrumb {

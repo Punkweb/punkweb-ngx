@@ -14,10 +14,11 @@ export class HomeRoute {
 
   public openModal() {
     this.modals.open(ConfirmModal, {
-      'animation': 'slideInTop 1s',
-      'position': {
-        'top': '10vh'
-      }
+      animation: 'slideInTop 1s',
+      position: {
+        top: '20vh',
+      },
+      width: '360px'
     }).subscribe((res) => {
       console.log(res);
     });

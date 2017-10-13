@@ -1,0 +1,40 @@
+@import '../../../scss/open-color';
+
+.sidebar {
+  background-color: $oc-gray-7;
+  box-shadow: 0 2px 16px rgba($oc-gray-9, .5);
+  color: $oc-gray-2;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: 100%;
+  width: 12rem;
+  z-index: 11;
+
+  &-item {
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, .3);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    transition: all .4s ease;
+
+
+    &:focus, &:hover, &:active {
+      background-color: $oc-gray-8;
+    }
+
+    &--active {
+      box-shadow: inset 48px 0 0 0 $oc-blue-6;
+    }
+
+    i {
+      font-size: 18px;
+    }
+
+    span {
+      margin-left: 2rem;
+    }
+  }
+}
