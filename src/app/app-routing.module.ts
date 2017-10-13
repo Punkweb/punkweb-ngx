@@ -5,7 +5,7 @@ import { Error404Route, HomeRoute, LoginRoute } from './routes';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {

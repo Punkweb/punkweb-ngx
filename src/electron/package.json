@@ -1,0 +1,5 @@
+{
+  "name"    : "porks-ng4-electron-app",
+  "version" : "0.0.0",
+  "main"    : "electron.js"
+}
