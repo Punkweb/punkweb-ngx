@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Error404Route, HomeRoute, LoginRoute } from './routes';
+import {
+  Error404RouteComponent,
+  HomeRouteComponent,
+  LoginRouteComponent,
+} from './routes';
 
 const routes: Routes = [
   {
@@ -10,20 +14,22 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeRoute
+    component: HomeRouteComponent
   },
   {
     path: 'login',
-    component: LoginRoute
+    component: LoginRouteComponent
   },
   {
     path: '**',
-    component: Error404Route
+    component: Error404RouteComponent
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // Have to useHash for electron to work,
+  // if the project doesn't need to run in electron, the {useHash: true} bit can be removed
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

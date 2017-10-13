@@ -13,9 +13,9 @@ import { AppComponent } from './app.component';
 
 // Routes
 import {
-  Error404Route,
-  HomeRoute,
-  LoginRoute,
+  Error404RouteComponent,
+  HomeRouteComponent,
+  LoginRouteComponent,
 } from './routes';
 
 // Components
@@ -39,9 +39,9 @@ import {
   declarations: [
     AppComponent,
     // Routes
-    Error404Route,
-    HomeRoute,
-    LoginRoute,
+    Error404RouteComponent,
+    HomeRouteComponent,
+    LoginRouteComponent,
     // Components
     NavComponent,
     SidebarComponent,

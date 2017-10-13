@@ -4,20 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { ModalService } from './modal.service';
 import { ModalOutletComponent } from './modal-outlet.component';
-import { ConfirmModal } from './confirm.modal';
+import { ConfirmModalComponent } from './confirm.modal';
 
 export { ModalService } from './modal.service';
 export { ModalOutletComponent } from './modal-outlet.component';
-export { ConfirmModal } from './confirm.modal';
+export { ConfirmModalComponent } from './confirm.modal';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
-  declarations: [ModalOutletComponent, ConfirmModal],
+  declarations: [ModalOutletComponent, ConfirmModalComponent],
   providers: [ModalService],
-  exports: [ModalOutletComponent, ModalOutletComponent, ConfirmModal],
-  entryComponents: [ConfirmModal]
+  exports: [ModalOutletComponent, ModalOutletComponent, ConfirmModalComponent],
+  entryComponents: [ConfirmModalComponent]
 })
 export class ModalsModule { }

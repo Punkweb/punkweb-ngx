@@ -24,10 +24,10 @@ export class ModalService {
     if (this.outlet.active) {
       this.outlet.active.destroy();
     }
-    let factory = this.cfr.resolveComponentFactory(component);
+    const factory = this.cfr.resolveComponentFactory(component);
     this.outlet.active = this.outlet.content.createComponent(factory);
     if (options.data) {
-      this.outlet.active.instance.data = options.data
+      this.outlet.active.instance.data = options.data;
     }
     this.outlet.options = Object.assign({}, this.optionDefaults, options);
     this.outlet.visible = true;

@@ -2,7 +2,7 @@ import { Component, OnInit, ComponentRef, ViewChild, ViewContainerRef } from '@a
 import { ModalService } from './modal.service';
 
 @Component({
-  selector: 'modal-outlet',
+  selector: 'app-modal-outlet',
   templateUrl: './modal-outlet.component.html',
   styleUrls: ['./modal-outlet.component.scss'],
 })

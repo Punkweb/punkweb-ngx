@@ -8,6 +8,7 @@ Intended to keep project structure organized and consistent.  Initially generate
 * App routing module (includes home route).
 * Modals module.  Globally accessible service to open any component as a modal.  Generic confirm modal.
 * Uses scss for styling.  Includes my style guide as a global stylesheet.
+* Can run as an Electron app.
 * Some unit and end to end tests implemented.
 
 ## Install deps
@@ -25,6 +26,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Run in Electron
+
+Run `npm run electron` to build and run the project as an Electron app.
 
 ## Running unit tests
 

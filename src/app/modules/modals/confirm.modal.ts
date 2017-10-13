@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ModalService } from './modal.service';
 
 @Component({
-  selector: 'modal-confirm',
+  selector: 'app-modal-confirm',
   templateUrl: './confirm.modal.html',
   styleUrls: ['./confirm.modal.scss']
 })
-export class ConfirmModal {
+export class ConfirmModalComponent {
 
   public data: any = {
     title: 'Confirm',

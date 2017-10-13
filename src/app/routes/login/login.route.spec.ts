@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppModule } from '../../app.module';
-import { LoginRoute } from './login.route';
+import { LoginRouteComponent } from './login.route';
 
-describe('LoginRoute', () => {
-  let component: LoginRoute;
-  let fixture: ComponentFixture<LoginRoute>;
+describe('LoginRouteComponent', () => {
+  let component: LoginRouteComponent;
+  let fixture: ComponentFixture<LoginRouteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,7 +16,7 @@ describe('LoginRoute', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginRoute);
+    fixture = TestBed.createComponent(LoginRouteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

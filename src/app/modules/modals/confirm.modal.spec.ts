@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppModule } from '../../app.module';
-import { HomeRouteComponent } from './home.route';
 
-describe('HomeRouteComponent', () => {
-  let component: HomeRouteComponent;
-  let fixture: ComponentFixture<HomeRouteComponent>;
+import { ConfirmModalComponent } from './confirm.modal';
+import { ModalsModule } from './modals.module';
+
+describe('ConfirmModalComponent', () => {
+  let component: ConfirmModalComponent;
+  let fixture: ComponentFixture<ConfirmModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        AppModule
+        ModalsModule,
       ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeRouteComponent);
+    fixture = TestBed.createComponent(ConfirmModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

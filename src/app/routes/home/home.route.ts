@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { ModalService, ConfirmModal } from '../../modules/modals/modals.module';
+import { ModalService, ConfirmModalComponent } from '../../modules/modals/modals.module';
 
 @Component({
-  selector: 'route-home',
+  selector: 'app-route-home',
   templateUrl: './home.route.html',
   styleUrls: ['./home.route.scss']
 })
-export class HomeRoute {
+export class HomeRouteComponent {
 
   constructor(
     private modals: ModalService,
   ) { }
 
   public openModal() {
-    this.modals.open(ConfirmModal, {
+    this.modals.open(ConfirmModalComponent, {
       animation: 'slideInTop 1s',
       position: {
         top: '20vh',
