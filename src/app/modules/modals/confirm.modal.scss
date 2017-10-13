@@ -2,7 +2,8 @@
 
   &-title {
     border-bottom: 1px solid #d1d1d1;
-    margin: .4em 0;
+    padding: .15em 0;
+    text-align: center;
   }
 
   &-buttons {
@@ -10,5 +11,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: 1.5rem;
+
+    button {
+      margin-left: 1rem;
+    }
   }
 }
