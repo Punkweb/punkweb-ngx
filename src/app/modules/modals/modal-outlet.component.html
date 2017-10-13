@@ -14,7 +14,9 @@
         'right': options.position?.right ? options.position?.right : 'auto'
       }"
       (click)="$event.stopPropagation()">
-        <span class="modal__close" [hidden]="options.closeDisabled" (click)="close()">&times;</span>
+        <div class="modal__close" [hidden]="options?.closeDisabled" (click)="close()">
+          <span class="modal__closeIcon">&#10006;</span>
+        </div>
         <ng-container #content></ng-container>
     </div>
 </div>
