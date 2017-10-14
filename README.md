@@ -7,11 +7,12 @@ Intended to keep project structure organized and consistent.  Initially generate
 ### Features
 
 * Clean project structure.
-* App routing module (includes home route).
+* App routing module.
 * Modals module.  Globally accessible service to open any component as a modal.  Generic confirm modal.
 * Uses scss for styling.  Includes my style guide as a global stylesheet.
 * Can run as an Electron app.
 * Some unit and end to end tests implemented.
+* Travis CI scripts.
 
 ## Install deps
 

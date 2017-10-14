@@ -1,4 +1,4 @@
-@import '~scss/open-color';
+@import '~scss/theming';
 
 .nav {
   background-color: $oc-gray-8;
@@ -34,7 +34,18 @@
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 1.2px;
+    line-height: 1.2em;
     text-transform: uppercase;
     text-decoration: none;
+  }
+  &-link {
+    color: $oc-gray-2;
+    text-decoration: none;
+    &-icon {
+      margin-right: .5em;
+    }
+    &:hover, &:active {
+      color: $primary;
+    }
   }
 }

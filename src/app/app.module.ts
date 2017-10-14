@@ -22,6 +22,7 @@ import {
 import {
   NavComponent,
   SidebarComponent,
+  SignUpModalComponent,
 } from './components';
 
 // Services
@@ -45,12 +46,15 @@ import {
     // Components
     NavComponent,
     SidebarComponent,
+    SignUpModalComponent,
   ],
   bootstrap: [AppComponent],
   providers: [
     {provide: APP_BASE_HREF, useValue : '/' }
     // Services
   ],
-  entryComponents: [],
+  entryComponents: [
+    SignUpModalComponent,
+  ],
 })
 export class AppModule { }

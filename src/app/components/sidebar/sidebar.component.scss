@@ -1,4 +1,5 @@
 @import '~scss/open-color';
+@import '~scss/theming';
 
 .sidebar {
   background-color: $oc-gray-7;
@@ -14,19 +15,21 @@
   &-item {
     align-items: center;
     border-bottom: 2px solid rgba(255, 255, 255, .3);
+    color: $oc-gray-2;
     cursor: pointer;
     display: flex;
     flex-direction: row;
     padding: 1rem;
+    text-decoration: none;
     transition: all .4s ease;
 
 
-    &:focus, &:hover, &:active {
+    &:hover, &:active {
       background-color: $oc-gray-8;
     }
 
     &--active {
-      box-shadow: inset 48px 0 0 0 $oc-blue-6;
+      box-shadow: inset 48px 0 0 0 $primary;
     }
 
     i {

@@ -13,7 +13,12 @@ if (serve) {
 }
 
 function createWindow() {
-  win = new BrowserWindow({width: 800, height: 600});
+  let windowConfig = {
+    autoHideMenuBar: true,
+    height: (9 * 100),
+    width: (16 * 100),
+  };
+  win = new BrowserWindow(windowConfig);
   win.loadURL('file://' + __dirname + '/index.html');
 
   win.on('closed', () => {
@@ -25,7 +30,7 @@ app.on('ready', createWindow);
 
 app.on('windows-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   }
 });
 

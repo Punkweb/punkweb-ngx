@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { ModalService } from '../../modules/modals/modals.module';
+import { SignUpModalComponent } from '../../components';
 
 @Component({
   'selector': 'app-route-login',
@@ -8,5 +9,18 @@ import { Component } from '@angular/core';
 })
 export class LoginRouteComponent {
 
-  constructor() { }
+  constructor(
+    private modalService: ModalService,
+  ) { }
+
+  public openSignUpModal() {
+    this.modalService.open(SignUpModalComponent, {
+      animation: 'scaleIn 1s',
+      position: {
+        top: '12rem',
+        left: '6rem'
+      },
+      width: '320px'
+    });
+  }
 }

@@ -1,23 +1,9 @@
-@import 'open-color';
+@import 'theming';
 
 // TODO: Checkboxes
 // TODO: Radio Buttons
 // TODO: Indeterminate Progress
 // TODO: Meters
-
-$primary: $oc-blue-5;
-$primary-hover: lighten($primary, 5%);
-$primary-active: darken($primary, 10%);
-
-$secondary: $oc-gray-7;
-$secondary-hover: lighten($secondary, 5%);
-$secondary-active: darken($secondary, 10%);
-
-$success: $oc-green-7;
-$error: $oc-red-8;
-$warning: $oc-yellow-4;
-$info: $oc-cyan-4;
-
 
 * { box-sizing: border-box; }
 
@@ -40,8 +26,10 @@ html, body {
 }
 
 .container--sidebar {
-  margin-left: 14rem;
-  padding: 0;
+  margin: 0;
+  padding: 0 1rem 0 13rem;
+  max-width: none;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -145,6 +133,7 @@ details, summary {
 
 a {
   color: $primary-active;
+  cursor: pointer;
   text-decoration: none;
   transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
 
@@ -395,7 +384,7 @@ progress::-webkit-progress-value {
   background-color: $color;
   border: 1px solid transparent;
   border-radius: 2px;
-  color: white;
+  color: white !important;
   cursor: pointer;
   display: inline-block;
   font-family: 'Open Sans';
@@ -405,7 +394,7 @@ progress::-webkit-progress-value {
   outline: none;
   padding: 1rem 2rem;
   text-align: center;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: background-color 0.4s ease-in-out;
 
   &:hover {
@@ -420,14 +409,14 @@ progress::-webkit-progress-value {
   @include button($color);
   background-color: transparent;
   border: 1px solid $color;
-  color: $color;
+  color: $color !important;
   &:hover {
     background-color: $color;
-    color: white;
+    color: white !important;
   }
   &:active {
     background-color: darken($color, 10%);
-    color: white;
+    color: white !important;
   }
 }
 
@@ -445,7 +434,7 @@ progress::-webkit-progress-value {
   }
   &-warning {
     @include button($warning);
-    color: $oc-gray-8;
+    color: $oc-gray-8 !important;
   }
   &-info {
     @include button($info);
@@ -466,17 +455,24 @@ progress::-webkit-progress-value {
   }
   &-warning {
     @include button-hollow($warning);
-    color: $oc-gray-8;
+    color: $oc-gray-8 !important;
     &:hover {
-      color: $oc-gray-8;
+      color: $oc-gray-8 !important;
     }
     &:active {
-      color: $oc-gray-8;
+      color: $oc-gray-8 !important;
     }
   }
   &-info {
     @include button-hollow($info);
   }
+}
+
+.card {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+  padding: 1rem;
 }
 
 /*

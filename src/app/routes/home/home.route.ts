@@ -14,7 +14,7 @@ export class HomeRouteComponent {
 
   public openModal() {
     this.modals.open(ConfirmModalComponent, {
-      animation: 'slideInTop 1s',
+      animation: 'scaleIn 1s',
       position: {
         top: '20vh',
       },
