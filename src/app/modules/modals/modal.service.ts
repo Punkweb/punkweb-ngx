@@ -9,7 +9,7 @@ export class ModalService {
   private result: Subject<any> = new Subject();
 
   private optionDefaults = {
-    animation: 'scaleIn .6',
+    animation: 'scaleIn .6s',
     backdropDisabled: false,
     closeDisabled: false,
     height: 'auto',

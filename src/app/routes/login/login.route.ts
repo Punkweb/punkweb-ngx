@@ -15,10 +15,8 @@ export class LoginRouteComponent {
 
   public openSignUpModal() {
     this.modalService.open(SignUpModalComponent, {
-      animation: 'scaleIn 1s',
       position: {
-        top: '12rem',
-        left: '6rem'
+        top: '12rem'
       },
       width: '320px'
     });

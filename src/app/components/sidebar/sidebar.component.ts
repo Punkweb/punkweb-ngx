@@ -11,12 +11,4 @@ export class SidebarComponent {
   constructor(
     private router: Router,
   ) { }
-
-  public routeHome() {
-    this.router.navigate(['/home']);
-  }
-
-  public routeLogin() {
-    this.router.navigate(['/login']);
-  }
 }
