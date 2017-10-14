@@ -1,5 +1,7 @@
 # PorkNg4Template
 
+[![Build Status](https://travis-ci.org/shakedown-street/porks-ng4-template.svg?branch=master)](https://travis-ci.org/shakedown-street/porks-ng4-template)
+
 Intended to keep project structure organized and consistent.  Initially generated with angular cli 1.3.4.
 
 ### Features
