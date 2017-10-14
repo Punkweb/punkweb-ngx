@@ -4,30 +4,17 @@
   background-color: $oc-gray-8;
   box-shadow: 0 2px 4px rgba($oc-gray-9, .5);
   color: $oc-gray-2;
-  width: 100vw;
+  position: relative;
   z-index: 10;
   &-content {
-    display: flex;
-    flex-direction: row;
-    height: 60px;
-    line-height: 60px;
-    width: 100%;
-  }
-  &-left {
-    flex: 1;
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    margin-left: 1rem;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
   }
-  &-right {
-    flex: 1;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 1rem;
+  &-spacer {
+    flex-grow: 1;
   }
   &-title {
     color: white;
@@ -40,6 +27,7 @@
   }
   &-link {
     color: $oc-gray-2;
+    font-size: 14px;
     margin-right: 1rem;
     text-decoration: none;
     &-icon {

@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ModalsModule } from './modules/modals/modals.module';
-import { SharedModule } from './shared/shared.module';
 
 // Main app
 import { AppComponent } from './app.component';
@@ -35,7 +34,6 @@ import {
     FormsModule,
     AppRoutingModule,
     ModalsModule,
-    SharedModule,
   ],
   declarations: [
     AppComponent,

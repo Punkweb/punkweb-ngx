@@ -1,21 +1,12 @@
-<!-- No Sidebar -->
 <div class="app">
   <app-nav></app-nav>
   <div class="main">
-    <div class="container">
-      <router-outlet></router-outlet>
+    <app-sidebar></app-sidebar>
+    <div class="outlet">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
   <app-modal-outlet></app-modal-outlet>
 </div>
-<!-- Sidebar -->
-<!-- <div class="app">
-  <app-nav></app-nav>
-  <app-sidebar></app-sidebar>
-  <div class="main">
-    <div class="container--sidebar">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-  <app-modal-outlet></app-modal-outlet>
-</div> -->

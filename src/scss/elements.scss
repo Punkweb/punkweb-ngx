@@ -5,7 +5,47 @@
 // TODO: Indeterminate Progress
 // TODO: Meters
 
-* { box-sizing: border-box; }
+
+@mixin dark-scrollbar {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $oc-gray-8;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+  }
+}
+
+@mixin light-scrollbar {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $oc-gray-4;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+  }
+}
+
+* {
+  @include light-scrollbar;
+  box-sizing: border-box;
+}
 
 html, body {
   background-color: $oc-gray-1;
@@ -21,14 +61,7 @@ html, body {
 .container {
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0 1rem;
-  width: 100%;
-}
-
-.container--sidebar {
-  margin: 0;
-  padding: 0 1rem 0 13rem;
-  max-width: none;
+  padding: 1rem;
   width: 100%;
 }
 
@@ -135,12 +168,12 @@ a {
   color: $primary-active;
   cursor: pointer;
   text-decoration: none;
-  transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
 
   &:link, &:visited {
     color: $primary-active;
   }
-  &:hover {
+  &:hover, &:active {
     text-decoration: underline;
   }
 }
@@ -221,7 +254,7 @@ input, select, textarea {
   font-size: 16px;
   outline: none;
   padding: 0.25rem 0.5rem;
-  transition: box-shadow 0.25s ease-in-out;
+  transition: box-shadow 0.25s ease;
 }
 
 input[type="color"] {
@@ -395,7 +428,7 @@ progress::-webkit-progress-value {
   padding: 1rem 2rem;
   text-align: center;
   text-decoration: none !important;
-  transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease;
 
   &:hover {
     background-color: lighten($color, 10%);

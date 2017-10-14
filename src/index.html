@@ -13,7 +13,7 @@
 <body>
   <app-root></app-root>
   <script>
-    window.electron = require('electron');
+    try { window.electron = require('electron'); } catch (e) { }
   </script>
 </body>
 </html>

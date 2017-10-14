@@ -1,9 +1,8 @@
 <div class="nav">
   <div class="nav-content">
-    <div class="nav-left">
-      <a class="nav-title" [routerLink]="['/home']">Pork's ng4 template</a>
-    </div>
-    <div class="nav-right">
+    <a class="nav-title" [routerLink]="['/home']">Pork's ng4 template</a>
+    <div class="nav-spacer"></div>
+    <div class="nav-links">
       <a class="nav-link" [routerLink]="['/login']"><span class="nav-link-icon"><i class="fa fa-sign-in" aria-hidden="true"></i></span>Sign in</a>
       <a class="nav-link" (click)="openSignUpModal()"><span class="nav-link-icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>Sign up</a>
     </div>

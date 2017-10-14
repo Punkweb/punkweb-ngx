@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidebarComponent } from './sidebar.component';
+import { SignUpModalComponent } from './sign-up.modal';
 import { AppModule } from '../../app.module';
 
-describe('SidebarComponent', () => {
-  let component: SidebarComponent;
-  let fixture: ComponentFixture<SidebarComponent>;
+describe('SignUpModalComponent', () => {
+  let component: SignUpModalComponent;
+  let fixture: ComponentFixture<SignUpModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,7 +16,7 @@ describe('SidebarComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SidebarComponent);
+    fixture = TestBed.createComponent(SignUpModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

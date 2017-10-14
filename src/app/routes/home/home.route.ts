@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalService, ConfirmModalComponent } from '../../modules/modals/modals.module';
+import { ModalService, ConfirmModalComponent } from '../../modules/modals';
 
 @Component({
   selector: 'app-route-home',
@@ -14,7 +14,6 @@ export class HomeRouteComponent {
 
   public openModal() {
     this.modals.open(ConfirmModalComponent, {
-      animation: 'scaleIn 1s',
       position: {
         top: '20vh',
       },
