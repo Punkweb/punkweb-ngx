@@ -1,6 +1,6 @@
 <div class="flex-row">
   <div class="flex-column flex-3 margin-right">
-    <div class="table-container margin-bottom" *ngFor="let i of [0, 0, 0, 0, 0, 0]">
+    <div class="table-container margin-bottom" *ngFor="let i of [0]">
       <table>
         <thead>
           <tr>
@@ -47,6 +47,7 @@
         </tbody>
       </table>
     </div>
+    <textarea class="post-editor" rows="8"></textarea>
   </div>
   <div class="flex-column flex-1">
     <button class="button" (click)="openModal()">Open Modal</button>
