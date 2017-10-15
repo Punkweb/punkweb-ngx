@@ -6,12 +6,18 @@
   color: $oc-gray-2;
   position: relative;
   z-index: 10;
+  &-upper {
+    background-color: $oc-gray-9;
+  }
   &-content {
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: .75rem 1rem;
+    padding: 1rem;
+    &-upper {
+      padding: .4rem 1rem;
+    }
   }
   &-spacer {
     flex-grow: 1;
@@ -19,7 +25,8 @@
   &-title {
     color: white;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: 'Open Sans';
     letter-spacing: 1.2px;
     line-height: 1.2em;
     text-transform: uppercase;
@@ -27,14 +34,27 @@
   }
   &-link {
     color: $oc-gray-2;
+    cursor: pointer;
     font-size: 14px;
-    margin-right: 1rem;
-    text-decoration: none;
+    margin-left: 32px;
     &-icon {
-      margin-right: .5em;
+      margin-right: 4px;
     }
-    &:hover, &:active {
-      color: $primary;
+    &--small {
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
+  &-search {
+    position: relative;
+    input {
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: $oc-gray-2;
+    }
+    &-icon {
+      position: absolute;
+      top: 5px;
+      right: 8px;
     }
   }
 }

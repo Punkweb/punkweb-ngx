@@ -191,7 +191,7 @@ pre, code {
   background-color: $oc-yellow-0;
 }
 
-.tableContainer {
+.table-container {
   overflow-x: auto;
 }
 
@@ -207,14 +207,19 @@ table {
     font-size: 18px;
     margin-bottom: 1rem;
   }
-  th, td {
-    padding: 1rem;
-  }
   th {
+    font-weight: 400;
     letter-spacing: 1px;
+    text-align: left;
+    padding: 1rem;
+    a {
+      color: white;
+    }
   }
   td {
     border: 2px solid $oc-gray-4;
+    padding: .5em 1rem;
+    vertical-align: top;
   }
   thead {
     background-color: $primary;
@@ -222,10 +227,10 @@ table {
     text-align: center;
   }
   tr:nth-child(even) {
-    background-color: $oc-gray-1;
+    background-color: $oc-gray-2;
   }
   tfoot {
-    background-color: $oc-gray-3;
+    background-color: $oc-gray-4;
   }
 }
 

@@ -9,6 +9,9 @@ import { SignUpModalComponent } from '../sign-up/sign-up.modal';
 })
 export class NavComponent {
 
+  public authenticated = false;
+  public superuser = false;
+
   constructor(
     private modalService: ModalService,
   ) { }

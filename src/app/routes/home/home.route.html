@@ -1,2 +1,54 @@
-<h1>Home</h1>
-<button class="button" (click)="openModal()">Open Modal</button>
+<div class="flex-row">
+  <div class="flex-column flex-3 margin-right">
+    <div class="table-container margin-bottom" *ngFor="let i of [0, 0, 0, 0, 0, 0]">
+      <table>
+        <thead>
+          <tr>
+            <th class="align-left" width="40%">
+              <a>Category</a>
+            </th>
+            <th class="align-center" width="10%">
+              Threads
+            </th>
+            <th class="align-center" width="10%">
+              Posts
+            </th>
+            <th class="align-left hide-on-mobile" width="30%">
+              Last Thread
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of [0, 0, 0, 0, 0, 0]">
+            <td class="align-left">
+              <div><a>Subcategory</a></div>
+              <div>Description</div>
+            </td>
+            <td class="align-center">
+              <div>11</div>
+            </td>
+            <td class="align-center">
+              <div>11</div>
+            </td>
+            <td class="align-left hide-on-mobile">
+              <div>
+                <a>
+                  Thread
+                </a>
+              </div>
+              <div>Datetime</div>
+              <div>by
+                <a>
+                  Pork
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="flex-column flex-1">
+    <button class="button" (click)="openModal()">Open Modal</button>
+  </div>
+</div>
