@@ -20,6 +20,6 @@ export class Error404RouteComponent implements OnInit {
   }
 
   public routeHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/board/home']);
   }
 }

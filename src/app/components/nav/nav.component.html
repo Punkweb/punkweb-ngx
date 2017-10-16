@@ -29,7 +29,7 @@
       </a>
     </div>
     <div class="nav-links" *ngIf="!authenticated">
-      <a class="nav-link nav-link--small" *ngIf="!authenticated" [routerLink]="['/login']">
+      <a class="nav-link nav-link--small" *ngIf="!authenticated" [routerLink]="['/board/login']">
         <span class="nav-link-icon"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i></span>
         <span>Sign in</span>
       </a>
@@ -42,9 +42,9 @@
 </div>
 <div class="nav">
   <div class="nav-content">
-    <a class="nav-title" [routerLink]="['/home']">Punk Web</a>
-    <a class="nav-link">Forum</a>
-    <a class="nav-link">Members</a>
+    <a class="nav-title" [routerLink]="['/']">Punk Web</a>
+    <a class="nav-link" [routerLink]="['/board']">Forum</a>
+    <a class="nav-link" [routerLink]="['/board/members']">Members</a>
     <div class="nav-spacer"></div>
     <form action="/board/search/" method="get">
       <div class="nav-search">

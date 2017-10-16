@@ -1,0 +1,59 @@
+<div class="flex-row">
+  <div class="flex-column flex-3">
+    <div class="card margin-bottom" *ngFor="let category of categories">
+      <table>
+        <thead>
+          <tr>
+            <th class="align-left" width="40%">
+              <a>{{category.name}}</a>
+            </th>
+            <th class="align-center" width="10%">
+              Threads
+            </th>
+            <th class="align-center" width="10%">
+              Posts
+            </th>
+            <th class="align-left hide-on-mobile" width="30%">
+              Last Thread
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sub of subcategories">
+            <td class="align-left">
+              <div><a>{{sub.name}}</a></div>
+              <div>{{sub.description}}</div>
+            </td>
+            <td class="align-center">
+              <div>{{sub.thread_count}}</div>
+            </td>
+            <td class="align-center">
+              <div>{{sub.post_count}}</div>
+            </td>
+            <td class="align-left hide-on-mobile">
+              <div *ngIf="sub.last_thread">
+                <a>
+                  {{sub.last_thread_title}}
+                </a>
+                <div>{{sub.last_thread_created|date:"MMM dd, yyyy, h:mm a"}}</div>
+                <div>by
+                  <a routerLink="/board/profile/" [innerHTML]="sanitizeName(sub.last_thread_user)"></a>
+                </div>
+              </div>
+              <div *ngIf="!sub.last_thread">
+                No Threads
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="flex-column flex-1 margin-left">
+    <div class="card padding">
+      <p>
+        Hello <a routerLink="/board/me/" [innerHTML]="sanitizeName((authUser | async)?.rendered_username)"></a>
+      </p>
+    </div>
+  </div>
+</div>

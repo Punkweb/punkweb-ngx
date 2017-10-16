@@ -21,7 +21,7 @@ export class AuthService {
     private http: HttpClient,
   ) {
     if (this.getAuthToken()) {
-      this.getUser(this.getAuthToken().id);
+      this.getUser();
     }
   }
 
@@ -32,7 +32,7 @@ export class AuthService {
     }).do(
       (token: Token) => {
         this.setAuthToken(token);
-        this.getUser(token.id);
+        this.getUser();
       }
     );
   }
@@ -43,8 +43,8 @@ export class AuthService {
     this.user$.next(this.user);
   }
 
-  public getUser(id) {
-    this.http.get(`${this.usersUrl}${id}/`).subscribe((user) => {
+  public getUser() {
+    this.http.get(`${this.usersUrl}${this.getAuthToken().id}/`).subscribe((user) => {
       this.user = user;
       this.user$.next(user);
     });

@@ -29,7 +29,7 @@ export class NavComponent {
 
   public signOut() {
     this.auth.logout();
-    this.router.navigate(['/login'])
+    this.router.navigate(['/board/login']);
   }
 
   public openSignUpModal() {

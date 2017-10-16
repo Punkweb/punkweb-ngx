@@ -191,17 +191,13 @@ pre, code {
   background-color: $oc-yellow-0;
 }
 
-.table-container {
-  overflow-x: auto;
-}
-
 table {
   border: none;
   border-collapse: collapse;
   outline: none;
   text-align: left;
   min-width: 480px;
-  width: calc(100% - 1px); // -1px fixes scroll issue with .tableContainer
+  width: calc(100%);
 
   caption {
     font-size: 18px;
@@ -223,6 +219,7 @@ table {
   }
   thead {
     background-color: $primary;
+    border-color: $primary;
     color: white;
     text-align: center;
   }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
+  BoardRouteComponent,
   Error404RouteComponent,
   HomeRouteComponent,
   LoginRouteComponent,
@@ -9,15 +10,15 @@ import {
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    component: HomeRouteComponent,
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    component: HomeRouteComponent
+    path: 'board',
+    component: BoardRouteComponent
   },
   {
-    path: 'login',
+    path: 'board/login',
     component: LoginRouteComponent
   },
   {

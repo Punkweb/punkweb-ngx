@@ -31,7 +31,7 @@ export class LoginRouteComponent {
     this.auth.login(this.username, this.password)
       .subscribe(
         (res) => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/board']);
         },
         // (err) => {
         //   let error = JSON.parse(err.error);

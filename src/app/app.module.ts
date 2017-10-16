@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 
 // Routes
 import {
+  BoardRouteComponent,
   Error404RouteComponent,
   HomeRouteComponent,
   LoginRouteComponent,
@@ -31,6 +32,7 @@ import {
   ApiService,
   AuthService,
   AuthTokenInterceptor,
+  SanitizeService,
 } from './services';
 
 @NgModule({
@@ -47,6 +49,7 @@ import {
   declarations: [
     AppComponent,
     // Routes
+    BoardRouteComponent,
     Error404RouteComponent,
     HomeRouteComponent,
     LoginRouteComponent,
@@ -62,6 +65,7 @@ import {
     {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
     ApiService,
     AuthService,
+    SanitizeService,
   ],
   entryComponents: [
     SignUpModalComponent,
