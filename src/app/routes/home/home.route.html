@@ -1,55 +1,62 @@
 <div class="flex-row">
-  <div class="flex-column flex-3 margin-right">
-    <div class="table-container margin-bottom" *ngFor="let i of [0]">
-      <table>
-        <thead>
-          <tr>
-            <th class="align-left" width="40%">
-              <a>Category</a>
-            </th>
-            <th class="align-center" width="10%">
-              Threads
-            </th>
-            <th class="align-center" width="10%">
-              Posts
-            </th>
-            <th class="align-left hide-on-mobile" width="30%">
-              Last Thread
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let i of [0, 0, 0, 0, 0, 0]">
-            <td class="align-left">
-              <div><a>Subcategory</a></div>
-              <div>Description</div>
-            </td>
-            <td class="align-center">
-              <div>11</div>
-            </td>
-            <td class="align-center">
-              <div>11</div>
-            </td>
-            <td class="align-left hide-on-mobile">
-              <div>
-                <a>
-                  Thread
-                </a>
-              </div>
-              <div>Datetime</div>
-              <div>by
-                <a>
-                  Pork
-                </a>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="flex-column flex-3">
+    <div class="card margin-bottom" *ngFor="let category of categories">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th class="align-left" width="40%">
+                <a>{{category.name}}</a>
+              </th>
+              <th class="align-center" width="10%">
+                Threads
+              </th>
+              <th class="align-center" width="10%">
+                Posts
+              </th>
+              <th class="align-left hide-on-mobile" width="30%">
+                Last Thread
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let sub of subcategories">
+              <td class="align-left">
+                <div><a>{{sub.name}}</a></div>
+                <div>{{sub.description}}</div>
+              </td>
+              <td class="align-center">
+                <div>11</div>
+              </td>
+              <td class="align-center">
+                <div>11</div>
+              </td>
+              <td class="align-left hide-on-mobile">
+                <div>
+                  <a>
+                    Thread
+                  </a>
+                </div>
+                <div>Datetime</div>
+                <div>by
+                  <a>
+                    Pork
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <textarea class="post-editor" rows="8"></textarea>
   </div>
-  <div class="flex-column flex-1">
-    <button class="button" (click)="openModal()">Open Modal</button>
+  <div class="flex-column flex-1 margin-left">
+    <div class="card padding">
+      <p>
+        Hello {{(authUser | async)?.username}}
+      </p>
+      <button class="button" (click)="openModal()">Open Modal</button>
+    </div>
   </div>
 </div>

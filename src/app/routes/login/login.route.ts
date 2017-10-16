@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { ModalService } from '../../modules/modals';
 import { SignUpModalComponent } from '../../components';
+import { AuthService } from '../../services';
 
 @Component({
   'selector': 'app-route-login',
@@ -9,12 +12,38 @@ import { SignUpModalComponent } from '../../components';
 })
 export class LoginRouteComponent {
 
+  public username: string;
+  public password: string;
+  public errorMessage: string;
+
   constructor(
-    private modalService: ModalService,
+    private http: HttpClient,
+    private router: Router,
+    private modals: ModalService,
+    private auth: AuthService,
   ) { }
 
+  public signInDisabled() {
+    return !this.username || !this.password;
+  }
+
+  public signIn() {
+    this.auth.login(this.username, this.password)
+      .subscribe(
+        (res) => {
+          this.router.navigate(['/home']);
+        },
+        // (err) => {
+        //   let error = JSON.parse(err.error);
+        //   if (error.non_field_errors) {
+        //     this.errorMessage = error.non_field_errors[0];
+        //   }
+        // }
+      );
+  }
+
   public openSignUpModal() {
-    this.modalService.open(SignUpModalComponent, {
+    this.modals.open(SignUpModalComponent, {
       position: {
         top: '12rem'
       },

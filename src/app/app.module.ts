@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
@@ -25,11 +27,18 @@ import {
 } from './components';
 
 // Services
+import {
+  ApiService,
+  AuthService,
+  AuthTokenInterceptor,
+} from './services';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     RouterModule,
     FormsModule,
     AppRoutingModule,
@@ -48,8 +57,11 @@ import {
   ],
   bootstrap: [AppComponent],
   providers: [
-    {provide: APP_BASE_HREF, useValue : '/' }
+    {provide: APP_BASE_HREF, useValue : '/' },
     // Services
+    {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
+    ApiService,
+    AuthService,
   ],
   entryComponents: [
     SignUpModalComponent,

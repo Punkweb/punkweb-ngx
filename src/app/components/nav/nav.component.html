@@ -1,6 +1,5 @@
 <div class="nav nav-upper">
   <div class="nav-content nav-content-upper">
-    <div class="nav-link nav-link--small" *ngIf="authenticated && superuser"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>Admin</div>
     <div class="nav-spacer"></div>
     <div class="nav-links" *ngIf="authenticated">
       <a class="nav-link nav-link--small" *ngIf="authenticated && superuser">
@@ -24,7 +23,7 @@
         <span class="nav-link-icon"><i class="fa fa-cog fa-fw" aria-hidden="true"></i></span>
         <span>Settings</span>
       </a>
-      <a class="nav-link nav-link--small" [routerLink]="['/login']">
+      <a class="nav-link nav-link--small" (click)="signOut()">
         <span class="nav-link-icon"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i></span>
         <span>Sign out</span>
       </a>

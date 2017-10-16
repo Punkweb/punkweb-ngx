@@ -441,6 +441,10 @@ progress::-webkit-progress-value {
   &:active {
     background-color: darken($color, 10%);
   }
+  &:disabled {
+    background-color: $oc-gray-5;
+    cursor: not-allowed;
+  }
 }
 
 @mixin button-hollow($color) {
@@ -455,6 +459,11 @@ progress::-webkit-progress-value {
   &:active {
     background-color: darken($color, 10%);
     color: white !important;
+  }
+  &:disabled {
+    background-color: transparent;
+    border: 1px solid $oc-gray-5;
+    color: $oc-gray-7 !important;
   }
 }
 
@@ -507,10 +516,9 @@ progress::-webkit-progress-value {
 }
 
 .card {
-  background-color: white;
+  background-color: $oc-gray-0;
   border-radius: 4px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
-  padding: 1rem;
 }
 
 /*

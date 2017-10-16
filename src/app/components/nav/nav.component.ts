@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalService } from '../../modules/modals';
 import { SignUpModalComponent } from '../sign-up/sign-up.modal';
+import { AuthService } from '../../services';
 
 @Component({
   'selector': 'app-nav',
@@ -9,15 +11,29 @@ import { SignUpModalComponent } from '../sign-up/sign-up.modal';
 })
 export class NavComponent {
 
+  public authUser = this.auth.user$.asObservable();
+
   public authenticated = false;
   public superuser = false;
 
   constructor(
-    private modalService: ModalService,
-  ) { }
+    private router: Router,
+    private modals: ModalService,
+    private auth: AuthService,
+  ) {
+    this.authUser.subscribe((user) => {
+      this.authenticated = !!user.id;
+      this.superuser = user.is_superuser;
+    });
+  }
+
+  public signOut() {
+    this.auth.logout();
+    this.router.navigate(['/login'])
+  }
 
   public openSignUpModal() {
-    this.modalService.open(SignUpModalComponent, {
+    this.modals.open(SignUpModalComponent, {
       position: {
         top: '12rem'
       },
