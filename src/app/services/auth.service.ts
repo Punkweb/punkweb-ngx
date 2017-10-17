@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
+import { HttpService } from './http.service';
 
 interface Token {
   token: string;
@@ -18,7 +18,7 @@ export class AuthService {
   public user$ = new BehaviorSubject<any>({});
 
   constructor(
-    private http: HttpClient,
+    private http: HttpService,
   ) {
     if (this.getAuthToken()) {
       this.getUser();

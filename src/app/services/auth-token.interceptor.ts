@@ -11,7 +11,6 @@ import {
 
 import { AuthService } from './auth.service';
 
-
 @Injectable()
 export class AuthTokenInterceptor implements HttpInterceptor {
 

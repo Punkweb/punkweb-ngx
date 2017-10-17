@@ -18,10 +18,10 @@ export class BoardRouteComponent {
     private sanitizeService: SanitizeService,
   ) {
     this.api.getAllCategories().subscribe((categories) => {
-      this.categories = categories;
+      this.categories = categories.results;
     });
     this.api.getAllSubcategories().subscribe((subcategories) => {
-      this.subcategories = subcategories;
+      this.subcategories = subcategories.results;
     });
   }
 

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -32,6 +31,7 @@ import {
   ApiService,
   AuthService,
   AuthTokenInterceptor,
+  HttpService,
   SanitizeService,
 } from './services';
 
@@ -39,7 +39,6 @@ import {
   imports: [
     CommonModule,
     BrowserModule,
-    HttpModule,
     HttpClientModule,
     RouterModule,
     FormsModule,
@@ -65,6 +64,7 @@ import {
     {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
     ApiService,
     AuthService,
+    HttpService,
     SanitizeService,
   ],
   entryComponents: [

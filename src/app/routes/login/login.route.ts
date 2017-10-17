@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ModalService } from '../../modules/modals';
 import { SignUpModalComponent } from '../../components';
@@ -17,7 +16,6 @@ export class LoginRouteComponent {
   public errorMessage: string;
 
   constructor(
-    private http: HttpClient,
     private router: Router,
     private modals: ModalService,
     private auth: AuthService,
@@ -33,12 +31,12 @@ export class LoginRouteComponent {
         (res) => {
           this.router.navigate(['/board']);
         },
-        // (err) => {
-        //   let error = JSON.parse(err.error);
-        //   if (error.non_field_errors) {
-        //     this.errorMessage = error.non_field_errors[0];
-        //   }
-        // }
+        (err) => {
+          let error = JSON.parse(err.error);
+          if (error.non_field_errors) {
+            this.errorMessage = error.non_field_errors[0];
+          }
+        }
       );
   }
 
