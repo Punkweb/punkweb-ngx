@@ -1,0 +1,58 @@
+@import 'functions';
+
+@mixin light { font-weight: 300; }
+@mixin normal { font-weight: 400; }
+@mixin medium { font-weight: 500; }
+@mixin bold { font-weight: 700; }
+
+@mixin font-range($min-size, $max-size, $min-width: 320, $max-width: 1440) {
+  $min-size-rem: rem-calc($min-size);
+  $max-size-rem: rem-calc($max-size);
+  $min-width-rem: rem-calc($min-width);
+  $max-width-rem: rem-calc($max-width);
+
+  font-size: calc(#{$min-size-rem} + (#{$max-size} - #{$min-size}) * (100vw - #{$min-width-rem}) / (#{$max-width} - #{$min-width}));
+
+  @media only screen and (max-width: $min-width) {
+    font-size: #{$min-size-rem};
+  }
+  @media only screen and (max-width: $max-width) {
+    font-size: #{$max-size-rem};
+  }
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: mix(black, $body-background, 30%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: mix(black, $primary, 40%);
+  }
+}
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-color { /* IE 10+ */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+  &:focus {
+    outline: none;
+  }
+}

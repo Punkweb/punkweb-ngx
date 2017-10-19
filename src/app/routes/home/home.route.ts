@@ -10,7 +10,7 @@ declare var $: any;
   templateUrl: './home.route.html',
   styleUrls: ['./home.route.scss']
 })
-export class HomeRouteComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit {
 
   public authUser = this.auth.user$.asObservable();
   public categories: any;

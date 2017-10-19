@@ -1,13 +1,14 @@
+@import '~scss/mixins';
 @import '~scss/theming';
 
 .nav {
-  background-color: $oc-gray-8;
+  background-color: $main-nav;
   box-shadow: 0 2px 4px rgba($oc-gray-9, .5);
-  color: $oc-gray-2;
+  color: $main-nav-text;
   position: relative;
   z-index: 10;
   &-upper {
-    background-color: $oc-gray-9;
+    background-color: $upper-nav;
   }
   &-content {
     align-items: center;
@@ -23,9 +24,9 @@
     flex-grow: 1;
   }
   &-title {
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
+    @include bold;
+    @include font-range(20, 24);
+    color: $main-nav-title;
     font-family: 'Open Sans';
     letter-spacing: 1.2px;
     line-height: 1.2em;
@@ -33,14 +34,17 @@
     text-decoration: none;
   }
   &-link {
-    color: $oc-gray-2;
+    @include font-range(14, 16);
+    @include medium;
+    color: $main-nav-link;
     cursor: pointer;
-    font-size: 14px;
     margin-left: 32px;
     &-icon {
       margin-right: 4px;
     }
-    &--small {
+    &--upper {
+      @include light;
+      color: $upper-nav-link;
       font-size: 12px;
       margin-left: 4px;
     }
@@ -49,7 +53,9 @@
     position: relative;
     input {
       border: 1px solid rgba(255, 255, 255, .12);
-      color: $oc-gray-2;
+      color: $default-text-on-dark;
+
+      @include placeholder($default-text-on-dark)
     }
     &-icon {
       position: absolute;

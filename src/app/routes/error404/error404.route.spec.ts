@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppModule } from '../../app.module';
-import { Error404RouteComponent } from './error404.route';
+import { Error404Component } from './error404.route';
 
 describe('Error404RouteComponent', () => {
-  let component: Error404RouteComponent;
-  let fixture: ComponentFixture<Error404RouteComponent>;
+  let component: Error404Component;
+  let fixture: ComponentFixture<Error404Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,7 +16,7 @@ describe('Error404RouteComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Error404RouteComponent);
+    fixture = TestBed.createComponent(Error404Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, AuthService, SanitizeService } from '../../services';
+import { ApiService, AuthService, SanitizeService } from '../../../services';
 
 @Component({
-  selector: 'app-route-board',
-  templateUrl: './board.route.html',
-  styleUrls: ['./board.route.scss']
+  selector: 'app-board-index',
+  templateUrl: './index.route.html',
+  styleUrls: ['./index.route.scss']
 })
-export class BoardRouteComponent {
+export class BoardIndexComponent {
 
   public authUser = this.auth.user$.asObservable();
   public categories: any;

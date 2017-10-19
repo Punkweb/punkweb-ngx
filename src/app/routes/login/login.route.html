@@ -1,14 +1,16 @@
-<div class="login">
-  <div class="card padding">
-    <h2 class="login-header">Sign in</h2>
-    <label>Username</label>
-    <input class="login-input" type="text" [(ngModel)]="username" />
-    <label>Password</label>
-    <input class="login-input" type="password" [(ngModel)]="password" />
-    <p>
-      {{errorMessage}}
-    </p>
-    <button class="login-button button" [disabled]="signInDisabled()" (click)="signIn()">Login</button>
-    <div>New Here? <a (click)="openSignUpModal()">Sign up</a></div>
+<div class="container">
+  <div class="login">
+    <div class="card padding">
+      <h2 class="login-header">Sign in</h2>
+      <label>Username</label>
+      <input class="login-input" type="text" [(ngModel)]="username" />
+      <label>Password</label>
+      <input class="login-input" type="password" [(ngModel)]="password" />
+      <p>
+        {{errorMessage}}
+      </p>
+      <button class="login-button button" [disabled]="signInDisabled()" (click)="signIn()">Sign in</button>
+      <div>New Here? <a (click)="openSignUpModal()">Sign up</a></div>
+    </div>
   </div>
 </div>

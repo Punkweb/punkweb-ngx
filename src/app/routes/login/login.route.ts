@@ -9,7 +9,7 @@ import { AuthService } from '../../services';
   'templateUrl': './login.route.html',
   'styleUrls': ['./login.route.scss']
 })
-export class LoginRouteComponent {
+export class LoginComponent {
 
   public username: string;
   public password: string;

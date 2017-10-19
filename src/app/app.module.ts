@@ -13,15 +13,17 @@ import { AppComponent } from './app.component';
 
 // Routes
 import {
-  BoardRouteComponent,
-  Error404RouteComponent,
-  HomeRouteComponent,
-  LoginRouteComponent,
+  BoardIndexComponent,
+  BoardMembersComponent,
+  Error404Component,
+  HomeComponent,
+  LoginComponent,
 } from './routes';
 
 // Components
 import {
   NavComponent,
+  PageHeaderComponent,
   SidebarComponent,
   SignUpModalComponent,
 } from './components';
@@ -48,12 +50,14 @@ import {
   declarations: [
     AppComponent,
     // Routes
-    BoardRouteComponent,
-    Error404RouteComponent,
-    HomeRouteComponent,
-    LoginRouteComponent,
+    BoardIndexComponent,
+    BoardMembersComponent,
+    Error404Component,
+    HomeComponent,
+    LoginComponent,
     // Components
     NavComponent,
+    PageHeaderComponent,
     SidebarComponent,
     SignUpModalComponent,
   ],

@@ -1,29 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
-  BoardRouteComponent,
-  Error404RouteComponent,
-  HomeRouteComponent,
-  LoginRouteComponent,
+  BoardIndexComponent,
+  BoardMembersComponent,
+  Error404Component,
+  HomeComponent,
+  LoginComponent,
 } from './routes';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeRouteComponent,
+    component: HomeComponent,
     pathMatch: 'full',
   },
   {
     path: 'board',
-    component: BoardRouteComponent
+    component: BoardIndexComponent
+  },
+  {
+    path: 'board/members',
+    component: BoardMembersComponent
   },
   {
     path: 'board/login',
-    component: LoginRouteComponent
+    component: LoginComponent
   },
   {
     path: '**',
-    component: Error404RouteComponent
+    component: Error404Component
   },
 ];
 
