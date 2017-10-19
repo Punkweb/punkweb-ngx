@@ -8,7 +8,7 @@ export class SanitizeService {
     private sanitizer: DomSanitizer,
   ) { }
 
-  public cleanName(name: string) {
-    return this.sanitizer.bypassSecurityTrustHtml(name);
+  public cleanHtml(htmlStr: string) {
+    return this.sanitizer.bypassSecurityTrustHtml(htmlStr);
   }
 }

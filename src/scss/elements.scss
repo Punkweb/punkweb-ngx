@@ -21,25 +21,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .breadcrumb {
-  background-color: $oc-gray-2;
   border-radius: 4px;
-  color: #707070;
+  color: $breadcrumb-active;
   font-size: 13px;
   letter-spacing: 1.3px;
   list-style: none;
   padding: .75rem 2rem;
   margin: 0;
-  width: 100%;
 
   li {
     display: inline;
 
     a {
-      color: $primary;
+      color: $breadcrumb-link;
     }
   }
   li+li:before {
-    color: $oc-gray-5;
+    color: $breadcrumb-separator;
     content: "/\00a0";
     margin: 0 0.5rem;
   }
@@ -114,13 +112,13 @@ details, summary {
 
 a {
   @include bold;
-  color: $primary-link;
+  color: $primary-text;
   cursor: pointer;
   text-decoration: none;
   transition: color 0.25s ease, text-shadow 0.25s ease;
 
   &:link, &:visited {
-    color: $primary-link;
+    color: $primary-text;
   }
   &:hover, &:active {
     text-decoration: underline;
@@ -459,6 +457,7 @@ progress::-webkit-progress-value {
 
 table {
   border-collapse: collapse;
+  width: 100%;
 
   thead {
     background-color: $table-header;

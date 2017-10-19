@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService, AuthService, SanitizeService } from '../../../services';
 
 @Component({
@@ -13,6 +14,7 @@ export class BoardIndexComponent {
   public subcategories: any;
 
   constructor(
+    private router: Router,
     private api: ApiService,
     private auth: AuthService,
     private sanitizeService: SanitizeService,
@@ -25,7 +27,11 @@ export class BoardIndexComponent {
     });
   }
 
-  public sanitizeName(name: string) {
-    return this.sanitizeService.cleanName(name);
+  public routeToCategory(category: any) {
+    this.router.navigate(['/category', category.id]);
+  }
+
+  public sanitize(html: string) {
+    return this.sanitizeService.cleanHtml(html);
   }
 }

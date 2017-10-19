@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
+  BoardCategoryComponent,
   BoardIndexComponent,
   BoardMembersComponent,
   Error404Component,
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'board',
     component: BoardIndexComponent
+  },
+  {
+    path: 'category/:id',
+    component: BoardCategoryComponent
   },
   {
     path: 'board/members',

@@ -2,11 +2,12 @@
 
 // Primaries
 $primary: $oc-blue-7;
-$primary-link: $oc-red-9;
+$primary-text: $oc-blue-9;
 $primary-hover: lighten($primary, 5%);
 $primary-active: darken($primary, 10%);
 
-$secondary: $oc-gray-7;
+$secondary: $oc-teal-7;
+$secondary-text: $oc-teal-9;
 $secondary-hover: lighten($secondary, 5%);
 $secondary-active: darken($secondary, 10%);
 
@@ -34,12 +35,12 @@ $main-nav-title: $default-text-on-dark;
 $main-nav-text: $default-text-on-dark;
 $main-nav-link: $default-text-on-dark;
 
-$page-header: mix(black, $primary, 55%);
+$page-header: mix(black, $primary, 50%);
 $page-header-text: $default-text-on-dark;
 
 $breadcrumb-active: $default-text;
 $breadcrumb-separator: $default-text;
-$breadcrumb-link: $primary-link;
+$breadcrumb-link: $primary-text;
 
 $hr: mix(black, $body-background, 10%);
 
@@ -54,7 +55,7 @@ $panel-title: $oc-white;
 $panel-body: mix(white, $body-background, 50%);
 $panel-footer: mix(black, $primary, 50%);
 $panel-text: $default-text-on-light;
-$panel-link: $primary-link;
+$panel-link: $primary-text;
 $panel-opacity: 1;
 
 $table-header: $panel-header;
@@ -66,7 +67,7 @@ $table-body-link: $panel-link;
 
 $footer: $upper-nav;
 $footer-text: $default-text;
-$footer-link: $primary-link;
+$footer-link: $primary-text;
 
 // Editor
 $editor-container: $body-background;

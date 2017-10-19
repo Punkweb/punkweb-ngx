@@ -32,7 +32,7 @@ export class LoginComponent {
           this.router.navigate(['/board']);
         },
         (err) => {
-          let error = JSON.parse(err.error);
+          const error = JSON.parse(err.error);
           if (error.non_field_errors) {
             this.errorMessage = error.non_field_errors[0];
           }

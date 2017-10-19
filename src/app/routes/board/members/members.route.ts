@@ -9,15 +9,26 @@ import { ApiService, AuthService, SanitizeService } from '../../../services';
 export class BoardMembersComponent {
 
   public authUser = this.auth.user$.asObservable();
+  public breadcrumbs: any[];
 
   constructor(
     private api: ApiService,
     private auth: AuthService,
     private sanitizeService: SanitizeService,
   ) {
+    this.breadcrumbs = [
+      {
+        'text': 'Forum',
+        'link': '/board/',
+      },
+      {
+        'text': 'Members',
+        'link': null
+      }
+    ];
   }
 
-  public sanitizeName(name: string) {
-    return this.sanitizeService.cleanName(name);
+  public sanitize(html: string) {
+    return this.sanitizeService.cleanHtml(html);
   }
 }
