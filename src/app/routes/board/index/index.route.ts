@@ -11,7 +11,6 @@ export class BoardIndexComponent {
 
   public authUser = this.auth.user$.asObservable();
   public categories: any;
-  public subcategories: any;
 
   constructor(
     private router: Router,
@@ -21,9 +20,12 @@ export class BoardIndexComponent {
   ) {
     this.api.getAllCategories().subscribe((categories) => {
       this.categories = categories.results;
-    });
-    this.api.getAllSubcategories().subscribe((subcategories) => {
-      this.subcategories = subcategories.results;
+      this.categories.forEach((category) => {
+        this.api.getSubcategoriesOfCategory(category.id).subscribe((subcategories) => {
+          category.subcategories = subcategories.results;
+        });
+      });
+      console.log(this.categories);
     });
   }
 
