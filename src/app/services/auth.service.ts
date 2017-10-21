@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import { HttpService } from './http.service';
+import { environment } from '../../environments/environment';
 
 interface Token {
   token: string;
@@ -12,8 +13,8 @@ interface Token {
 @Injectable()
 export class AuthService {
 
-  public authUrl = 'http://localhost:8000/api/token-auth/';
-  public usersUrl = `http://localhost:8000/api/users/`;
+  public authUrl = `${environment.apiUrl}/token-auth/`;
+  public usersUrl = `${environment.apiUrl}/users/`;
   public user: any = {};
   public user$ = new BehaviorSubject<any>({});
 

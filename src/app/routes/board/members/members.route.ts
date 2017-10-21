@@ -10,13 +10,21 @@ export class BoardMembersComponent {
 
   public authUser = this.auth.user$.asObservable();
   public breadcrumbs: any[];
+  public users: any[];
 
   constructor(
     private api: ApiService,
     private auth: AuthService,
     private sanitizeService: SanitizeService,
   ) {
-    this.breadcrumbs = [
+    this.api.getAllUsers().subscribe((users) => {
+      this.users = users.results;
+    });
+    this.buildBreadcrumbs();
+  }
+
+  public buildBreadcrumbs() {
+    return [
       {
         'text': 'Forum',
         'link': '/board/',

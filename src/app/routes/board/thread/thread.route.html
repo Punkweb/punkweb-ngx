@@ -1,0 +1,27 @@
+<app-page-header [title]="'Thread'" [breadcrumbs]="breadcrumbs"></app-page-header>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-header">
+      <h3 class="panel-title">{{thread?.title}}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="flex-row">
+        <div class="flex-2">
+          <a href="#">
+            <img src="{{thread?.user_image}}" alt="..." />
+          </a>
+          <a href="#" [innerHTML]="sanitize(thread?.user_username)"></a>
+        </div>
+        <div class="flex-10 flex-row">
+          <div class="flex-col flex-12" [innerHTML]="sanitize(thread?._content_rendered)">
+            {{thread?.content.rendered}}
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      {{thread?.created}}
+    </div>
+  </div>
+</div>

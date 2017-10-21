@@ -7,7 +7,7 @@
             <thead>
               <tr>
                 <th class="align-left" width="40%">
-                  <a (click)="routeToCategory(category)">{{category.name}}</a>
+                  <a (click)="routeToCategory(category.id)">{{category.name}}</a>
                 </th>
                 <th class="align-center" width="10%">
                   Threads
@@ -23,7 +23,7 @@
             <tbody>
               <tr *ngFor="let sub of category.subcategories">
                 <td class="align-left">
-                  <div><a>{{sub.name}}</a></div>
+                  <div><a (click)="routeToSubcategory(sub.id)">{{sub.name}}</a></div>
                   <div>{{sub.description}}</div>
                 </td>
                 <td class="align-center">
@@ -34,7 +34,7 @@
                 </td>
                 <td class="align-left hide-on-mobile">
                   <div *ngIf="sub.last_thread">
-                    <a>
+                    <a (click)="routeToThread(sub.last_thread)">
                       {{sub.last_thread_title}}
                     </a>
                     <div>{{sub.last_thread_created|date:"MMM dd, yyyy, h:mm a"}}</div>

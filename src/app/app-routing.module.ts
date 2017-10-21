@@ -4,6 +4,8 @@ import {
   BoardCategoryComponent,
   BoardIndexComponent,
   BoardMembersComponent,
+  BoardSubcategoryComponent,
+  BoardThreadComponent,
   Error404Component,
   HomeComponent,
   LoginComponent,
@@ -20,8 +22,16 @@ const routes: Routes = [
     component: BoardIndexComponent
   },
   {
-    path: 'category/:id',
+    path: 'board/category/:id',
     component: BoardCategoryComponent
+  },
+  {
+    path: 'board/subcategory/:id',
+    component: BoardSubcategoryComponent
+  },
+  {
+    path: 'board/thread/:id',
+    component: BoardThreadComponent
   },
   {
     path: 'board/members',

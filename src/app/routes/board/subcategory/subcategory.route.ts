@@ -3,15 +3,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService, SanitizeService } from '../../../services';
 
 @Component({
-  'selector': 'app-route-category',
-  'templateUrl': './category.route.html',
-  'styleUrls': ['./category.route.scss']
+  'selector': 'app-route-subcategory',
+  'templateUrl': './subcategory.route.html',
+  'styleUrls': ['./subcategory.route.scss']
 })
-export class BoardCategoryComponent {
+export class BoardSubcategoryComponent {
 
   public breadcrumbs: any[];
-  public category: any;
-  public subcategories: any;
+  public subcategory: any;
+  public threads: any[];
 
   constructor(
     private route: ActivatedRoute,
@@ -20,18 +20,14 @@ export class BoardCategoryComponent {
     private sanitizeService: SanitizeService,
   ) {
     this.route.params.subscribe((params) => {
-      this.api.getCategory(params['id']).subscribe((category) => {
-        this.category = category;
+      this.api.getSubcategory(params['id']).subscribe((subcategory) => {
+        this.subcategory = subcategory;
         this.buildBreadcrumbs();
-      });
-      this.api.getSubcategoriesOfCategory(params['id']).subscribe((subcategories) => {
-        this.subcategories = subcategories.results;
+        this.api.getAllThreadsOfSubcategory(this.subcategory.id).subscribe((threads) => {
+          this.threads = threads.results;
+        });
       });
     });
-  }
-
-  public routeToSubcategory(subcategoryId: any) {
-    this.router.navigate(['/board/subcategory', subcategoryId]);
   }
 
   public routeToThread(threadId: any) {
@@ -45,7 +41,11 @@ export class BoardCategoryComponent {
         'link': '/board'
       },
       {
-        'text': this.category.name,
+        'text': this.subcategory.parent,
+        'link': `/board/category/${this.subcategory.parent}`
+      },
+      {
+        'text': this.subcategory.name,
         'link': null
       }
     ];

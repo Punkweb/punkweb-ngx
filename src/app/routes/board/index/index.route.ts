@@ -25,12 +25,19 @@ export class BoardIndexComponent {
           category.subcategories = subcategories.results;
         });
       });
-      console.log(this.categories);
     });
   }
 
-  public routeToCategory(category: any) {
-    this.router.navigate(['/category', category.id]);
+  public routeToCategory(categoryId: any) {
+    this.router.navigate(['/board/category', categoryId]);
+  }
+
+  public routeToSubcategory(subcategoryId: any) {
+    this.router.navigate(['/board/subcategory', subcategoryId]);
+  }
+
+  public routeToThread(threadId: any) {
+    this.router.navigate(['/board/thread', threadId]);
   }
 
   public sanitize(html: string) {

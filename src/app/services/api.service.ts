@@ -23,18 +23,36 @@ export class ApiService {
     return this.http.get(API_URL + '/subcategories');
   }
 
+  public getSubcategory(id: number | string) {
+    return this.http.get(API_URL + `/subcategories/${id}`);
+  }
+
   public getSubcategoriesOfCategory(parent: number | string) {
     return this.http.get(API_URL + '/subcategories', {
       parent_id: parent
     });
   }
 
-  public getAllThreads() {
+  public getThread(id: number | string) {
+    return this.http.get(API_URL + `/threads/${id}`);
+  }
 
+  public getAllThreads() {
+    return this.http.get(API_URL + '/threads');
+  }
+
+  public getAllThreadsOfSubcategory(subcategory: number | string) {
+    return this.http.get(API_URL + `/threads`, {
+      subcategory_id: subcategory
+    });
+  }
+
+  public getPost(id: number | string) {
+    return this.http.get(API_URL + `/posts/${id}`);
   }
 
   public getAllPosts() {
-
+    return this.http.get(API_URL + '/posts');
   }
 
   public getAllConversations() {
@@ -50,6 +68,6 @@ export class ApiService {
   }
 
   public getAllUsers() {
-
+    return this.http.get(API_URL + '/users');
   }
 }
