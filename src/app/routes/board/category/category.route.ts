@@ -20,12 +20,14 @@ export class BoardCategoryComponent {
     private sanitizeService: SanitizeService,
   ) {
     this.route.params.subscribe((params) => {
-      this.api.getCategory(params['id']).subscribe((category) => {
+      this.api.Category.read(params['id']).subscribe((category) => {
         this.category = category;
         this.buildBreadcrumbs();
       });
-      this.api.getSubcategoriesOfCategory(params['id']).subscribe((subcategories) => {
-        this.subcategories = subcategories.results;
+      this.api.Subcategory.list({
+        parent_id: params['id']
+      }).subscribe((subcategories) => {
+        this.subcategories = subcategories;
       });
     });
   }

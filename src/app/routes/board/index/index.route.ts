@@ -18,11 +18,13 @@ export class BoardIndexComponent {
     private auth: AuthService,
     private sanitizeService: SanitizeService,
   ) {
-    this.api.getAllCategories().subscribe((categories) => {
+    this.api.Category.paged().subscribe((categories) => {
       this.categories = categories.results;
       this.categories.forEach((category) => {
-        this.api.getSubcategoriesOfCategory(category.id).subscribe((subcategories) => {
-          category.subcategories = subcategories.results;
+        this.api.Subcategory.list({
+          parent_id: category.id
+        }).subscribe((subcategories) => {
+          category.subcategories = subcategories;
         });
       });
     });

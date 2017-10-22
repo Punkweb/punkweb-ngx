@@ -46,7 +46,14 @@ class ApiEndpoint implements ApiOperations {
   public list(params = {}): Observable<any> {
     let request = this.http.get(this.createUrl(), params);
     return request
-      .catch((error: any) => Observable.throw(error));
+      .map((response: ListResponse) => {
+        const results = Object.assign(response.results, {
+          count: response.count,
+          next: response.next,
+          previous: response.previous
+        });
+        return results;
+      }).catch((error: any) => Observable.throw(error));
   }
 
   public paged(params = {}): Observable<any> {
@@ -109,6 +116,10 @@ class ApiEndpoint implements ApiOperations {
 @Injectable()
 export class ApiService {
 
+  public Category = new ApiEndpoint(this.http, '/category');
+  public Post = new ApiEndpoint(this.http, '/post');
+  public Subcategory = new ApiEndpoint(this.http, '/subcategory');
+  public Thread = new ApiEndpoint(this.http, '/thread');
   public User = new ApiEndpoint(this.http, '/users');
 
   constructor(

@@ -20,10 +20,12 @@ export class BoardSubcategoryComponent {
     private sanitizeService: SanitizeService,
   ) {
     this.route.params.subscribe((params) => {
-      this.api.getSubcategory(params['id']).subscribe((subcategory) => {
+      this.api.Subcategory.read(params['id']).subscribe((subcategory) => {
         this.subcategory = subcategory;
         this.buildBreadcrumbs();
-        this.api.getAllThreadsOfSubcategory(this.subcategory.id).subscribe((threads) => {
+        this.api.Thread.paged({
+          subcategory_id: this.subcategory.id
+        }).subscribe((threads) => {
           this.threads = threads.results;
         });
       });

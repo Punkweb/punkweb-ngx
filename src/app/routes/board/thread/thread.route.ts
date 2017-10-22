@@ -22,10 +22,10 @@ export class BoardThreadComponent {
     private sanitizeService: SanitizeService,
   ) {
     this.route.params.subscribe((params) => {
-      this.api.getThread(params['id']).subscribe((thread) => {
+      this.api.Thread.read(params['id']).subscribe((thread) => {
         this.thread = thread;
         this.buildBreadcrumbs();
-        this.api.getAllPosts().subscribe((posts) => {
+        this.api.Post.list().subscribe((posts) => {
           this.posts = posts;
         });
       });

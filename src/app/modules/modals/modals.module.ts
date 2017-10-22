@@ -6,10 +6,6 @@ import { ModalService } from './modal.service';
 import { ModalOutletComponent } from './modal-outlet.component';
 import { ConfirmModalComponent } from './confirm.modal';
 
-export { ModalService } from './modal.service';
-export { ModalOutletComponent } from './modal-outlet.component';
-export { ConfirmModalComponent } from './confirm.modal';
-
 @NgModule({
   imports: [
     CommonModule,

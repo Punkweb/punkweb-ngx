@@ -17,8 +17,8 @@ export class BoardMembersComponent {
     private auth: AuthService,
     private sanitizeService: SanitizeService,
   ) {
-    this.api.getAllUsers().subscribe((users) => {
-      this.users = users.results;
+    this.api.User.paged().subscribe((users) => {
+      this.users = users;
     });
     this.buildBreadcrumbs();
   }

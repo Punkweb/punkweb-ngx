@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CodeMirrorModule } from './modules/codemirror/codemirror.module';
 import { ModalsModule } from './modules/modals/modals.module';
 
 // Main app
@@ -48,6 +49,7 @@ import {
     RouterModule,
     FormsModule,
     AppRoutingModule,
+    CodeMirrorModule,
     ModalsModule,
   ],
   declarations: [
