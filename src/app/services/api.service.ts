@@ -116,10 +116,6 @@ class ApiEndpoint implements ApiOperations {
 @Injectable()
 export class ApiService {
 
-  public Category = new ApiEndpoint(this.http, '/category');
-  public Post = new ApiEndpoint(this.http, '/post');
-  public Subcategory = new ApiEndpoint(this.http, '/subcategory');
-  public Thread = new ApiEndpoint(this.http, '/thread');
   public User = new ApiEndpoint(this.http, '/users');
 
   constructor(

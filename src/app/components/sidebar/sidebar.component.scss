@@ -2,17 +2,17 @@
 @import '~scss/theming';
 
 .sidebar {
-  background-color: $oc-gray-9;
+  background-color: mix(black, $body-background, 5%);
   box-shadow: 0 2px 16px rgba($oc-gray-9, .5);
-  color: $oc-gray-2;
+  color: $default-text;
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
   width: 12rem;
   &-item {
     align-items: center;
-    border-bottom: 2px solid rgba(255, 255, 255, .3);
-    color: $oc-gray-2;
+    border-bottom: 2px solid rgba(0, 0, 0, .12);
+    color: $default-text;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -28,10 +28,10 @@
       margin-left: 2rem;
     }
     &--active {
-      box-shadow: inset 48px 0 0 0 $primary;
+      box-shadow: inset 48px 0 0 0 mix(black, $primary, 30%);
     }
     &:active, &:hover {
-      background-color: $oc-gray-8;
+      background-color: darken($body-background, 5%);
     }
   }
 }

@@ -25,9 +25,4 @@ export class SidebarComponent {
       this.superuser = user.is_superuser;
     });
   }
-
-  public signOut() {
-    this.auth.logout();
-    this.router.navigate(['/board/login']);
-  }
 }

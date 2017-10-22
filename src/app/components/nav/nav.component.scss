@@ -7,18 +7,12 @@
   color: $main-nav-text;
   position: relative;
   z-index: 10;
-  &-upper {
-    background-color: $upper-nav;
-  }
   &-content {
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 1rem;
-    &-upper {
-      padding: .4rem 1rem;
-    }
   }
   &-spacer {
     flex-grow: 1;
@@ -41,26 +35,6 @@
     margin-left: 32px;
     &-icon {
       margin-right: 4px;
-    }
-    &--upper {
-      @include light;
-      color: $upper-nav-link;
-      font-size: 12px;
-      margin-left: 4px;
-    }
-  }
-  &-search {
-    position: relative;
-    input {
-      border: 1px solid rgba(255, 255, 255, .12);
-      color: $default-text-on-dark;
-
-      @include placeholder($default-text-on-dark)
-    }
-    &-icon {
-      position: absolute;
-      top: 5px;
-      right: 8px;
     }
   }
 }

@@ -1,11 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
-  BoardCategoryComponent,
-  BoardIndexComponent,
-  BoardMembersComponent,
-  BoardSubcategoryComponent,
-  BoardThreadComponent,
   Error404Component,
   HomeComponent,
   LoginComponent,
@@ -18,27 +13,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'board',
-    component: BoardIndexComponent
-  },
-  {
-    path: 'board/category/:id',
-    component: BoardCategoryComponent
-  },
-  {
-    path: 'board/subcategory/:id',
-    component: BoardSubcategoryComponent
-  },
-  {
-    path: 'board/thread/:id',
-    component: BoardThreadComponent
-  },
-  {
-    path: 'board/members',
-    component: BoardMembersComponent
-  },
-  {
-    path: 'board/login',
+    path: 'login',
     component: LoginComponent
   },
   {

@@ -68,15 +68,3 @@ $table-body-link: $panel-link;
 $footer: $upper-nav;
 $footer-text: $default-text;
 $footer-link: $primary-text;
-
-// Editor
-$editor-container: $body-background;
-$editor-text: $default-text-on-dark;
-$editor-border: desaturate($primary, 25%);
-$editor-toolbar: lighten($body-background, 15%);
-$editor-toolbar-group: $oc-gray-2;
-$editor-toolbar-group-hover: lighten($body-background, 70%);
-$editor-button: $body-background;
-$editor-button-hover: lighten($body-background, 5%);
-$editor-button-text: $default-text-on-dark;
-$editor-button-border: desaturate($primary, 25%);

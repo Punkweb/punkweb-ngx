@@ -14,11 +14,6 @@ import { AppComponent } from './app.component';
 
 // Routes
 import {
-  BoardIndexComponent,
-  BoardCategoryComponent,
-  BoardMembersComponent,
-  BoardSubcategoryComponent,
-  BoardThreadComponent,
   Error404Component,
   HomeComponent,
   LoginComponent,
@@ -55,11 +50,6 @@ import {
   declarations: [
     AppComponent,
     // Routes
-    BoardIndexComponent,
-    BoardCategoryComponent,
-    BoardMembersComponent,
-    BoardSubcategoryComponent,
-    BoardThreadComponent,
     Error404Component,
     HomeComponent,
     LoginComponent,
