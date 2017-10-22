@@ -15,6 +15,17 @@ export class LoginComponent {
   public password: string;
   public errorMessage: string;
 
+  public breadcrumbs = [
+    {
+      text: 'Home',
+      link: '/'
+    },
+    {
+      text: 'Sign in',
+      link: null
+    }
+  ];
+
   constructor(
     private router: Router,
     private modals: ModalService,
@@ -29,7 +40,7 @@ export class LoginComponent {
     this.auth.login(this.username, this.password)
       .subscribe(
         (res) => {
-          this.router.navigate(['/board']);
+          this.router.navigate(['/']);
         },
         (err) => {
           const error = JSON.parse(err.error);

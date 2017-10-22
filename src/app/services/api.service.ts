@@ -32,19 +32,19 @@ class ApiEndpoint implements ApiOperations {
   constructor(private http: HttpService, public endpoint: string) { }
 
   public create(payload = {}): Observable<any> {
-    let request = this.http.post(this.createUrl(), payload);
+    const request = this.http.post(this.createUrl(), payload);
     return request
       .catch((error: any) => Observable.throw(error));
   }
 
   public read(id: number | string, params = {}): Observable<any> {
-    let request = this.http.get(this.createUrl(id), params);
+    const request = this.http.get(this.createUrl(id), params);
     return request
       .catch((error: any) => Observable.throw(error));
   }
 
   public list(params = {}): Observable<any> {
-    let request = this.http.get(this.createUrl(), params);
+    const request = this.http.get(this.createUrl(), params);
     return request
       .map((response: ListResponse) => {
         const results = Object.assign(response.results, {
@@ -57,10 +57,10 @@ class ApiEndpoint implements ApiOperations {
   }
 
   public paged(params = {}): Observable<any> {
-    let request = this.http.get(this.createUrl(), params);
+    const request = this.http.get(this.createUrl(), params);
     return request
       .flatMap((firstPage: ListResponse) => {
-        let pageObservables: Observable<any>[] = [Observable.of(firstPage.results)];
+        const pageObservables: Observable<any>[] = [Observable.of(firstPage.results)];
         // construct each page url for each existing page, starting at 2
         if (firstPage.next) {
           for (let i = 2; i <= Math.ceil(firstPage.count / firstPage.results.length); i++) {
@@ -87,19 +87,19 @@ class ApiEndpoint implements ApiOperations {
   }
 
   public delete(id: number | string): Observable<any> {
-    let request = this.http.delete(this.createUrl(id));
+    const request = this.http.delete(this.createUrl(id));
     return request
       .catch((error: any) => Observable.throw(error));
   }
 
   public listRoute(method: string, route: string, payload = {}, params = {}): Observable<any> {
-    let request = this.http.request(method, `${this.createUrl()}/${route}`, payload, params);
+    const request = this.http.request(method, `${this.createUrl()}/${route}`, payload, params);
     return request
       .catch((error: any) => Observable.throw(error));
   }
 
   public detailRoute(method: string, route: string, id: number | string, payload = {}, params = {}): Observable<any> {
-    let request = this.http.request(method, `${this.createUrl()}/${route}/${id}`, payload, params);
+    const request = this.http.request(method, `${this.createUrl()}/${route}/${id}`, payload, params);
     return request
       .catch((error: any) => Observable.throw(error));
   }

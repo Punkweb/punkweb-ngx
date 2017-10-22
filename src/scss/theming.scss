@@ -1,21 +1,29 @@
 @import 'open-color';
 
+$primary: $oc-blue-7;
+$primary-blacken-10: mix(black, $primary, 10%);
+$primary-blacken-20: mix(black, $primary, 20%);
+$primary-blacken-30: mix(black, $primary, 30%);
+$primary-blacken-40: mix(black, $primary, 40%);
+$primary-blacken-50: mix(black, $primary, 50%);
+$primary-blacken-60: mix(black, $primary, 60%);
+$primary-blacken-70: mix(black, $primary, 70%);
+$primary-blacken-80: mix(black, $primary, 80%);
+$primary-blacken-90: mix(black, $primary, 90%);
+$primary-whiten-10: mix(white, $primary, 10%);
+$primary-whiten-20: mix(white, $primary, 20%);
+$primary-whiten-30: mix(white, $primary, 30%);
+$primary-whiten-40: mix(white, $primary, 40%);
+$primary-whiten-50: mix(white, $primary, 50%);
+$primary-whiten-60: mix(white, $primary, 60%);
+$primary-whiten-70: mix(white, $primary, 70%);
+$primary-whiten-80: mix(white, $primary, 80%);
+$primary-whiten-90: mix(white, $primary, 90%);
+
 // Primaries
-$primary: $oc-red-7;
-$primary-text: $oc-red-9;
-$primary-hover: lighten($primary, 5%);
-$primary-active: darken($primary, 10%);
-
-$secondary: $oc-teal-7;
-$secondary-text: $oc-teal-9;
-$secondary-hover: lighten($secondary, 5%);
-$secondary-active: darken($secondary, 10%);
-
-// Contextual
-$success: $oc-green-7;
-$error: $oc-red-7;
-$warning: $oc-yellow-4;
-$info: $oc-indigo-4;
+$primary-link: $primary-whiten-10;
+$primary-hover: $primary-whiten-10;
+$primary-active: $primary-blacken-10;
 
 // Text
 $default-text-on-light: lighten(black, 10%);
@@ -27,20 +35,17 @@ $input-placeholder: $default-text-on-light;
 $body-background: $oc-gray-2;
 // $body-background: mix(black, $primary, 40%);
 
-$upper-nav: $oc-gray-9;
-$upper-nav-link: $default-text-on-dark;
-
-$main-nav: mix(black, $primary, 45%);
+$main-nav: $primary-blacken-40;
 $main-nav-title: $default-text-on-dark;
 $main-nav-text: $default-text-on-dark;
 $main-nav-link: $default-text-on-dark;
 
-$page-header: mix(black, $primary, 50%);
+$page-header: $primary-blacken-50;
 $page-header-text: $default-text-on-dark;
 
-$breadcrumb-active: $default-text;
-$breadcrumb-separator: $default-text;
-$breadcrumb-link: $primary-text;
+$breadcrumb-active: $default-text-on-dark;
+$breadcrumb-separator: $default-text-on-dark;
+$breadcrumb-link: $primary-link;
 
 $hr: mix(black, $body-background, 10%);
 
@@ -50,12 +55,12 @@ $badge-text: $oc-white;
 $dropdown: mix(black, $primary, 65%);
 $dropdown-shadow: 0px .5rem 1rem 0px rgba(0, 0, 0, 0.2);
 
-$panel-header: mix(black, $primary, 30%);
-$panel-title: $oc-white;
+$panel-header: $primary-blacken-30;
+$panel-title: white;
 $panel-body: mix(white, $body-background, 50%);
-$panel-footer: mix(black, $primary, 50%);
+$panel-footer: $primary-blacken-50;
 $panel-text: $default-text-on-light;
-$panel-link: $primary-text;
+$panel-link: $primary-link;
 $panel-opacity: 1;
 
 $table-header: $panel-header;
@@ -64,7 +69,3 @@ $table-header-link: $default-text-on-dark;
 $table-body: $panel-body;
 $table-body-text: $panel-text;
 $table-body-link: $panel-link;
-
-$footer: $upper-nav;
-$footer-text: $default-text;
-$footer-link: $primary-text;

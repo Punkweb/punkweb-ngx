@@ -1,16 +1,19 @@
+<app-page-header [title]="'Login'" [breadcrumbs]="breadcrumbs"></app-page-header>
 <div class="container">
   <div class="login">
-    <div class="panel padding">
-      <h2 class="login-header">Sign in</h2>
-      <label>Username</label>
-      <input class="login-input" type="text" [(ngModel)]="username" />
-      <label>Password</label>
-      <input class="login-input" type="password" [(ngModel)]="password" />
-      <p>
-        {{errorMessage}}
-      </p>
-      <button class="login-button button" [disabled]="signInDisabled()" (click)="signIn()">Sign in</button>
-      <div>New Here? <a (click)="openSignUpModal()">Sign up</a></div>
+    <div class="panel">
+      <div class="panel-body padding">
+        <h2 class="login-header">Sign in</h2>
+        <label>Username</label>
+        <input class="full-width margin-bottom" type="text" [(ngModel)]="username" />
+        <label>Password</label>
+        <input class="full-width margin-bottom" type="password" [(ngModel)]="password" />
+        <p>
+          {{errorMessage}}
+        </p>
+        <button class="button-primary full-width margin-bottom" [disabled]="signInDisabled()" (click)="signIn()">Sign in</button>
+        <div>New Here? <a (click)="openSignUpModal()">Sign up</a></div>
+      </div>
     </div>
   </div>
 </div>

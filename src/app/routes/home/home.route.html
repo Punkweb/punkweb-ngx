@@ -1,4 +1,12 @@
+<app-page-header [title]="'Home'"></app-page-header>
 <div class="container">
-  <button class="button" (click)="openModal()">Open Modal</button>
-  <app-codemirror [(ngModel)]="codemirrorValue" (ngModelChange)="testModelChange($event)"></app-codemirror>
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">Out of the box</div>
+    </div>
+    <div class="panel-body padding">
+      <button class="button margin-bottom" (click)="openModal()">Open Modal</button>
+      <app-codemirror [(ngModel)]="codemirrorValue"></app-codemirror>
+    </div>
+  </div>
 </div>

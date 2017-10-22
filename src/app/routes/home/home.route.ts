@@ -10,7 +10,7 @@ import { ApiService, AuthService } from '../../services';
 export class HomeComponent {
 
   public authUser = this.auth.user$.asObservable();
-  public codemirrorValue = 'asdfasdfas';
+  public codemirrorValue = '[b]Bbcode CodeMirror mode[/b]';
 
   constructor(
     private modals: ModalService,

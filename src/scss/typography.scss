@@ -1,6 +1,3 @@
-@import 'mixins';
-@import 'theming';
-
 html, body {
   @include normal;
   color: $default-text;

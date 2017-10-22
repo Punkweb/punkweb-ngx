@@ -2,16 +2,17 @@
 @import '~scss/theming';
 
 .sidebar {
-  background-color: mix(black, $body-background, 5%);
+  background-color: $body-background;
   box-shadow: 0 2px 16px rgba($oc-gray-9, .5);
   color: $default-text;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  height: 100%;
+  position: relative;
   width: 12rem;
   &-item {
     align-items: center;
-    border-bottom: 2px solid rgba(0, 0, 0, .12);
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
     color: $default-text;
     cursor: pointer;
     display: flex;
@@ -22,13 +23,14 @@
     overflow-x: hidden;
     overflow-y: auto;
     i {
+      color: white;
       font-size: 18px;
     }
     span {
       margin-left: 2rem;
     }
     &--active {
-      box-shadow: inset 48px 0 0 0 mix(black, $primary, 30%);
+      box-shadow: inset 48px 0 0 0 $primary-blacken-20;
     }
     &:active, &:hover {
       background-color: darken($body-background, 5%);
