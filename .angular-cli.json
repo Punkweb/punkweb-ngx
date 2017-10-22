@@ -19,9 +19,17 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "scss/elements.scss"
+        "../node_modules/sceditor/minified/themes/default.min.css",
+        "../node_modules/codemirror/lib/codemirror.css",
+        "../node_modules/codemirror/theme/monokai.css",
+        "scss/defaults.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/sceditor/minified/jquery.sceditor.bbcode.min.js",
+        "../node_modules/codemirror/lib/codemirror.js",
+        "./bbcode.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

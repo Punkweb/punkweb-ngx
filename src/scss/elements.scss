@@ -1,62 +1,10 @@
 @import 'theming';
+@import 'mixins';
 
 // TODO: Checkboxes
 // TODO: Radio Buttons
 // TODO: Indeterminate Progress
 // TODO: Meters
-
-
-@mixin dark-scrollbar {
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  &::-webkit-scrollbar:horizontal {
-    height: 10px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: $oc-gray-8;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $primary;
-  }
-}
-
-@mixin light-scrollbar {
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  &::-webkit-scrollbar:horizontal {
-    height: 10px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: $oc-gray-4;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $primary;
-  }
-}
-
-* {
-  @include light-scrollbar;
-  box-sizing: border-box;
-}
-
-html, body {
-  background-color: $oc-gray-1;
-  color: $oc-gray-7;
-  font-family: 'Montserrat';
-  font-size: 100%;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  min-width: 320px;
-}
 
 .container {
   margin: 0 auto;
@@ -73,25 +21,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .breadcrumb {
-  background-color: $oc-gray-2;
   border-radius: 4px;
-  color: #707070;
+  color: $breadcrumb-active;
   font-size: 13px;
   letter-spacing: 1.3px;
   list-style: none;
   padding: .75rem 2rem;
   margin: 0;
-  width: 100%;
 
   li {
     display: inline;
 
     a {
-      color: $primary;
+      color: $breadcrumb-link;
     }
   }
   li+li:before {
-    color: $oc-gray-5;
+    color: $breadcrumb-separator;
     content: "/\00a0";
     margin: 0 0.5rem;
   }
@@ -165,13 +111,14 @@ details, summary {
 }
 
 a {
-  color: $primary-active;
+  @include bold;
+  color: $primary-text;
   cursor: pointer;
   text-decoration: none;
   transition: color 0.25s ease, text-shadow 0.25s ease;
 
   &:link, &:visited {
-    color: $primary-active;
+    color: $primary-text;
   }
   &:hover, &:active {
     text-decoration: underline;
@@ -189,44 +136,6 @@ pre {
 
 pre, code {
   background-color: $oc-yellow-0;
-}
-
-.tableContainer {
-  overflow-x: auto;
-}
-
-table {
-  border: none;
-  border-collapse: collapse;
-  outline: none;
-  text-align: left;
-  min-width: 480px;
-  width: calc(100% - 1px); // -1px fixes scroll issue with .tableContainer
-
-  caption {
-    font-size: 18px;
-    margin-bottom: 1rem;
-  }
-  th, td {
-    padding: 1rem;
-  }
-  th {
-    letter-spacing: 1px;
-  }
-  td {
-    border: 2px solid $oc-gray-4;
-  }
-  thead {
-    background-color: $primary;
-    color: white;
-    text-align: center;
-  }
-  tr:nth-child(even) {
-    background-color: $oc-gray-1;
-  }
-  tfoot {
-    background-color: $oc-gray-3;
-  }
 }
 
 fieldset {
@@ -255,6 +164,8 @@ input, select, textarea {
   outline: none;
   padding: 0.25rem 0.5rem;
   transition: box-shadow 0.25s ease;
+
+  @include placeholder($default-text-on-light);
 }
 
 input[type="color"] {
@@ -436,6 +347,10 @@ progress::-webkit-progress-value {
   &:active {
     background-color: darken($color, 10%);
   }
+  &:disabled {
+    background-color: $oc-gray-5;
+    cursor: not-allowed;
+  }
 }
 
 @mixin button-hollow($color) {
@@ -450,6 +365,11 @@ progress::-webkit-progress-value {
   &:active {
     background-color: darken($color, 10%);
     color: white !important;
+  }
+  &:disabled {
+    background-color: transparent;
+    border: 1px solid $oc-gray-5;
+    color: $oc-gray-7 !important;
   }
 }
 
@@ -501,12 +421,86 @@ progress::-webkit-progress-value {
   }
 }
 
-.card {
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
-  padding: 1rem;
+.panel {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, .12);
+  color: $panel-text;
+  margin-bottom: 1rem;
+  opacity: $panel-opacity;
+
+  &-header {
+    @include medium;
+    @include font-range(12, 14);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $panel-header;
+    padding: 1rem;
+  }
+  &-title {
+    @include medium;
+    @include font-range(12, 14);
+    color: $panel-title;
+  }
+  &-body {
+    @include font-range(12, 14);
+    background-color: $panel-body;
+    a {
+      color: $panel-link;
+    }
+  }
+  &-footer {
+    @include font-range(12, 14);
+    background-color: $panel-footer;
+    padding: 1rem;
+  }
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    background-color: $table-header;
+    color: $table-header-text;
+    tr {
+      th {
+        @include medium;
+        @include font-range(12, 14);
+        padding: 1rem;
+        a {
+          color: $table-header-link !important;
+        }
+      }
+      td {
+        @include font-range(12, 14);
+      }
+    }
+  }
+  tbody {
+    background-color: $table-body;
+    color: $table-body-text;
+    tr {
+      th {
+        @include font-range(12, 14);
+      }
+      td {
+        @include font-range(12, 14);
+        padding: 1rem;
+        vertical-align: top;
+        a {
+          color: $table-body-link;
+        }
+      }
+      &:not(:last-of-type) {
+        border-bottom: 2px solid $hr;
+      }
+    }
+    .vertically-centered {
+      vertical-align: middle;
+    }
+  }
+}
+
 
 /*
 How to style meters cross browser

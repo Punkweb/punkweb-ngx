@@ -1,2 +1,10 @@
-<h1>Home</h1>
-<button class="button" (click)="openModal()">Open Modal</button>
+<div class="container">
+  <p>
+    Portal page under construction
+  </p>
+  <button class="button" (click)="openModal()">Open Modal</button>
+  <input type="text" [(ngModel)]="title">
+  <input type="text" [(ngModel)]="tags">
+  <textarea #codemirrorTextarea rows="8" cols="80"></textarea>
+  <button class="button" (click)="postThread()">Post</button>
+</div>

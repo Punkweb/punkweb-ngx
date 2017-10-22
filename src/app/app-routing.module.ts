@@ -1,28 +1,49 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
-  Error404RouteComponent,
-  HomeRouteComponent,
-  LoginRouteComponent,
+  BoardCategoryComponent,
+  BoardIndexComponent,
+  BoardMembersComponent,
+  BoardSubcategoryComponent,
+  BoardThreadComponent,
+  Error404Component,
+  HomeComponent,
+  LoginComponent,
 } from './routes';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    component: HomeComponent,
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    component: HomeRouteComponent
+    path: 'board',
+    component: BoardIndexComponent
   },
   {
-    path: 'login',
-    component: LoginRouteComponent
+    path: 'board/category/:id',
+    component: BoardCategoryComponent
+  },
+  {
+    path: 'board/subcategory/:id',
+    component: BoardSubcategoryComponent
+  },
+  {
+    path: 'board/thread/:id',
+    component: BoardThreadComponent
+  },
+  {
+    path: 'board/members',
+    component: BoardMembersComponent
+  },
+  {
+    path: 'board/login',
+    component: LoginComponent
   },
   {
     path: '**',
-    component: Error404RouteComponent
+    component: Error404Component
   },
 ];
 

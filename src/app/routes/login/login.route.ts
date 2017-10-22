@@ -1,20 +1,47 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalService } from '../../modules/modals';
 import { SignUpModalComponent } from '../../components';
+import { AuthService } from '../../services';
 
 @Component({
   'selector': 'app-route-login',
   'templateUrl': './login.route.html',
   'styleUrls': ['./login.route.scss']
 })
-export class LoginRouteComponent {
+export class LoginComponent {
+
+  public username: string;
+  public password: string;
+  public errorMessage: string;
 
   constructor(
-    private modalService: ModalService,
+    private router: Router,
+    private modals: ModalService,
+    private auth: AuthService,
   ) { }
 
+  public signInDisabled() {
+    return !this.username || !this.password;
+  }
+
+  public signIn() {
+    this.auth.login(this.username, this.password)
+      .subscribe(
+        (res) => {
+          this.router.navigate(['/board']);
+        },
+        (err) => {
+          const error = JSON.parse(err.error);
+          if (error.non_field_errors) {
+            this.errorMessage = error.non_field_errors[0];
+          }
+        }
+      );
+  }
+
   public openSignUpModal() {
-    this.modalService.open(SignUpModalComponent, {
+    this.modals.open(SignUpModalComponent, {
       position: {
         top: '12rem'
       },

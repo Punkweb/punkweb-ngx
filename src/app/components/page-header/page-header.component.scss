@@ -1,0 +1,13 @@
+@import '~scss/mixins';
+@import '~scss/theming';
+
+.page-header {
+  background-color: $page-header;
+  border-bottom: 2px solid $hr;
+  &-title {
+    @include bold;
+    @include font-range(16, 20);
+    color: $page-header-text;
+    margin: 1rem 0;
+  }
+}

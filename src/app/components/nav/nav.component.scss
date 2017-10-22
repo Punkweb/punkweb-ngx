@@ -1,40 +1,66 @@
+@import '~scss/mixins';
 @import '~scss/theming';
 
 .nav {
-  background-color: $oc-gray-8;
+  background-color: $main-nav;
   box-shadow: 0 2px 4px rgba($oc-gray-9, .5);
-  color: $oc-gray-2;
+  color: $main-nav-text;
   position: relative;
   z-index: 10;
+  &-upper {
+    background-color: $upper-nav;
+  }
   &-content {
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: .75rem 1rem;
+    padding: 1rem;
+    &-upper {
+      padding: .4rem 1rem;
+    }
   }
   &-spacer {
     flex-grow: 1;
   }
   &-title {
-    color: white;
-    font-size: 24px;
-    font-weight: 500;
+    @include bold;
+    @include font-range(20, 24);
+    color: $main-nav-title;
+    font-family: 'Open Sans';
     letter-spacing: 1.2px;
     line-height: 1.2em;
     text-transform: uppercase;
     text-decoration: none;
   }
   &-link {
-    color: $oc-gray-2;
-    font-size: 14px;
-    margin-right: 1rem;
-    text-decoration: none;
+    @include font-range(14, 16);
+    @include medium;
+    color: $main-nav-link;
+    cursor: pointer;
+    margin-left: 32px;
     &-icon {
-      margin-right: .5em;
+      margin-right: 4px;
     }
-    &:hover, &:active {
-      color: $primary;
+    &--upper {
+      @include light;
+      color: $upper-nav-link;
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
+  &-search {
+    position: relative;
+    input {
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: $default-text-on-dark;
+
+      @include placeholder($default-text-on-dark)
+    }
+    &-icon {
+      position: absolute;
+      top: 5px;
+      right: 8px;
     }
   }
 }

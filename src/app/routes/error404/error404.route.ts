@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   'selector': 'app-route-error404',
   'templateUrl': './error404.route.html',
   'styleUrls': ['./error404.route.scss']
 })
-export class Error404RouteComponent implements OnInit {
+export class Error404Component implements OnInit {
 
   constructor(
     private router: Router,
@@ -20,6 +19,6 @@ export class Error404RouteComponent implements OnInit {
   }
 
   public routeHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/board']);
   }
 }
