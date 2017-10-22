@@ -10,7 +10,7 @@
           <a href="#">
             <img src="{{thread?.user_image}}" alt="..." />
           </a>
-          <a href="#" [innerHTML]="sanitize(thread?.user_username)"></a>
+          <a href="#" [innerHTML]="sanitize(thread?.user_rendered_username)"></a>
         </div>
         <div class="flex-10 flex-row">
           <div class="flex-col flex-12" [innerHTML]="sanitize(thread?._content_rendered)">

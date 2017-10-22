@@ -47,6 +47,10 @@ export class ApiService {
     });
   }
 
+  public postThread(data: any) {
+    return this.http.post(API_URL + '/threads/', data);
+  }
+
   public getPost(id: number | string) {
     return this.http.get(API_URL + `/posts/${id}`);
   }

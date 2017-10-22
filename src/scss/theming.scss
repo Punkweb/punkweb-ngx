@@ -1,8 +1,8 @@
 @import 'open-color';
 
 // Primaries
-$primary: $oc-blue-7;
-$primary-text: $oc-blue-9;
+$primary: $oc-red-7;
+$primary-text: $oc-red-9;
 $primary-hover: lighten($primary, 5%);
 $primary-active: darken($primary, 10%);
 
