@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ModalService, ConfirmModalComponent } from '../../modules/modals';
-import { ApiService, AuthService } from '../../services';
+import { ApiService, AuthService, ElectronService } from '../../services';
 
 @Component({
   selector: 'app-route-home',
@@ -9,14 +9,19 @@ import { ApiService, AuthService } from '../../services';
 })
 export class HomeComponent {
 
-  public authUser = this.auth.user$.asObservable();
+  public user: any = {};
   public codemirrorValue = '[b]Bbcode CodeMirror mode[/b]';
 
   constructor(
     private modals: ModalService,
     private api: ApiService,
     private auth: AuthService,
-  ) { }
+    public electron: ElectronService,
+  ) {
+    this.auth.user$.subscribe((user) => {
+      this.user = user;
+    });
+  }
 
   public openModal() {
     this.modals.open(ConfirmModalComponent, {

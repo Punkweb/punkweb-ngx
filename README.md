@@ -9,8 +9,11 @@ Intended to keep project structure organized and consistent.  Initially generate
 * Clean project structure.
 * App routing module.
 * Modals module.  Globally accessible service to open any component as a modal.  Generic confirm modal.
+* Electron integration while still being primarily web based.
+* Token authentication, makes use of the new `@angular/common/http` `HttpInterceptor` to set token headers.
+* Http service that abstracts headers and params to make them easier.
+* API service for abstracting REST api endpoint's CRUD operations.
 * Uses scss for styling.  Includes my style guide as a global stylesheet.
-* Can run as an Electron app.
 * Some unit and end to end tests implemented.
 * Travis CI scripts.
 

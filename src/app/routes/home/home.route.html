@@ -5,7 +5,14 @@
       <div class="panel-title">Out of the box</div>
     </div>
     <div class="panel-body padding">
-      <button class="button margin-bottom" (click)="openModal()">Open Modal</button>
+      <p>Hello {{user.email}}</p>
+      <p *ngIf="electron.isElectron()">App <strong>IS</strong> running on electron</p>
+      <p *ngIf="!electron.isElectron()">App is <strong>NOT</strong> running on electron</p>
+      <button class="button-hollow-primary margin-bottom" (click)="openModal()">Open Modal</button>
+      <button class="button-hollow-green margin-bottom" (click)="openModal()">Open Modal</button>
+      <button class="button-hollow-red margin-bottom" (click)="openModal()">Open Modal</button>
+      <button class="button-hollow-orange margin-bottom" (click)="openModal()">Open Modal</button>
+      <input class="margin-bottom" type="text" name="" value="">
       <app-codemirror [(ngModel)]="codemirrorValue"></app-codemirror>
     </div>
   </div>

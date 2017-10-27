@@ -25,7 +25,7 @@ const routes: Routes = [
 @NgModule({
   // Have to useHash for electron to work,
   // if the project doesn't need to run in electron, the {useHash: true} bit can be removed
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

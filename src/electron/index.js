@@ -1,5 +1,4 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const url = require('url');
 
 let win, serve;
@@ -12,6 +11,10 @@ if (serve) {
   })
 }
 
+ipcMain.on('ping', (event, arg) => {
+  event.sender.send('pong');
+});
+
 function createWindow() {
   let windowConfig = {
     autoHideMenuBar: true,
@@ -19,7 +22,7 @@ function createWindow() {
     width: (16 * 100),
   };
   win = new BrowserWindow(windowConfig);
-  win.loadURL('file://' + __dirname + '/index.html');
+  win.loadURL('http://localhost:4200');
 
   win.on('closed', () => {
     win = null;

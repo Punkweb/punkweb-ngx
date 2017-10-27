@@ -32,6 +32,7 @@ import {
   ApiService,
   AuthService,
   AuthTokenInterceptor,
+  ElectronService,
   HttpService,
   SanitizeService,
 } from './services';
@@ -66,6 +67,7 @@ import {
     {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
     ApiService,
     AuthService,
+    ElectronService,
     HttpService,
     SanitizeService,
   ],

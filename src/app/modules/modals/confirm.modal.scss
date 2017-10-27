@@ -6,14 +6,7 @@
     text-align: center;
   }
   &-buttons {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    float: right;
     margin-top: 1.5rem;
-
-    button {
-      margin-left: 1rem;
-    }
   }
 }

@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/electronDist
 /tmp
 /out-tsc
 
