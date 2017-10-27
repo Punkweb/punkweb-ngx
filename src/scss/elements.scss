@@ -17,70 +17,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-.breadcrumb {
-  border-radius: 4px;
-  color: $breadcrumb-active;
-  font-size: 13px;
-  letter-spacing: 1.3px;
-  list-style: none;
-  padding: .75rem 2rem;
-  margin: 0;
-
-  li {
-    display: inline;
-
-    a {
-      color: $breadcrumb-link;
-    }
-  }
-  li+li:before {
-    color: $breadcrumb-separator;
-    content: "/\00a0";
-    margin: 0 0.5rem;
-  }
-}
-
-.pagination {
-  color: #707070;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  li {
-    border: 1px solid $oc-gray-3;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline;
-    margin: 0;
-    padding: 0.5rem 1rem;
-    &:hover {
-      background-color: $oc-gray-1;
-    }
-  }
-  .active {
-    background-color: $oc-gray-3;
-    border-color: $oc-gray-3;
-    &:hover {
-      background-color: $oc-gray-3;
-      border-color: $oc-gray-3;
-    }
-  }
-  .disabled {
-    background-color: $oc-gray-4;
-    border-color: $oc-gray-4;
-    cursor: not-allowed;
-    &:hover {
-      background-color: $oc-gray-4;
-      border-color: $oc-gray-4;
-    }
-  }
-}
-
 hr {
   background-color: $oc-gray-4;
   border: 0;
   border-radius: 2px;
   color: $oc-gray-4;
-  height: 2px;
+  height: 1px;
   width: 100%;
 }
 
@@ -482,6 +424,55 @@ table {
     }
     .vertically-centered {
       vertical-align: middle;
+    }
+  }
+}
+
+.breadcrumb {
+  border-radius: 4px;
+  color: $breadcrumb-active;
+  font-size: 13px;
+  letter-spacing: 1.3px;
+  list-style: none;
+  padding: .75rem 2rem;
+  margin: 0;
+
+  li {
+    display: inline;
+
+    a {
+      color: $breadcrumb-link;
+    }
+  }
+  li+li:before {
+    color: $breadcrumb-separator;
+    content: "/\00a0";
+    margin: 0 0.5rem;
+  }
+}
+
+.pagination {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  li {
+    @include button($oc-gray-3, $default-text-on-light);
+    box-shadow: none;
+    min-width: inherit;
+  }
+  .active {
+    @include button($primary-whiten-10, $default-text-on-dark);
+    box-shadow: none;
+    min-width: inherit;
+  }
+  .disabled {
+    @include button($oc-gray-4, $oc-gray-6);
+    box-shadow: none;
+    min-width: inherit;
+    cursor: not-allowed;
+    &:hover {
+      background-color: $oc-gray-4;
+      box-shadow: none;
     }
   }
 }
