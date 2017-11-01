@@ -264,9 +264,16 @@ progress::-webkit-progress-value {
 }
 
 @mixin button($background, $color) {
+  @include gradient-animation(
+    lighten($background, 5%),
+    darken($background, 5%),
+    lighten($background, 10%),
+    darken($background, 10%),
+    .4s
+ );
   @include medium;
   appearance: none;
-  background-color: $background;
+  // background-color: $background;
   border: 1px solid mix(black, $background, 20%);
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
@@ -283,11 +290,16 @@ progress::-webkit-progress-value {
   text-decoration: none !important;
   transition: all .25s ease-in-out;
   &:hover {
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2), 0px 0px 6px mix(white, $background, 10%);
-    background-color: mix(black, $background, 10%);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2), 0px 0px 6px rgba(0, 0, 0, .4);
   }
   &:disabled {
-    background-color: $oc-gray-5;
+    @include gradient-animation(
+      $oc-gray-5,
+      $oc-gray-5,
+      $oc-gray-5,
+      $oc-gray-5,
+      .4s
+   );
     border: 1px solid $oc-gray-6;
     cursor: not-allowed;
     &:hover {
@@ -459,11 +471,17 @@ table {
     @include button($oc-gray-3, $default-text-on-light);
     box-shadow: none;
     min-width: inherit;
+    &:hover {
+      box-shadow: none;
+    }
   }
   .active {
     @include button($primary-whiten-10, $default-text-on-dark);
     box-shadow: none;
     min-width: inherit;
+    &:hover {
+      box-shadow: none;
+    }
   }
   .disabled {
     @include button($oc-gray-4, $oc-gray-6);
@@ -471,7 +489,6 @@ table {
     min-width: inherit;
     cursor: not-allowed;
     &:hover {
-      background-color: $oc-gray-4;
       box-shadow: none;
     }
   }
