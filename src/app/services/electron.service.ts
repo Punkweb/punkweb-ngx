@@ -10,10 +10,15 @@ export class ElectronService {
     if (this.isElectron()) {
       this.instance = window['electron'];
       this.ipcRenderer = this.instance.ipcRenderer;
-      this.registerIpcReceiver('pong', (event, arg) => {
-        console.log('Ipc renderer up and running');
+      this.notify('Porks Ngx Template', 'Ipc renderer up and running, click notification to play ping pong.', () => {
+        this.sendIpcEvent('ping', 'ping');
       });
-      this.sendIpcEvent('ping');
+      // Play ping pong with IPC
+      this.registerIpcReceiver('pong', (event, arg) => {
+        this.notify('Porks Ngx Template', arg, () => {
+          this.sendIpcEvent('ping', 'ping');
+        });
+      });
     }
   }
 
@@ -29,6 +34,13 @@ export class ElectronService {
       return;
     }
     this.ipcRenderer.on(type, callback);
+  }
+
+  public notify(title: string, body: string, click = () => {}) {
+    let notification = new Notification(title, {
+      body: body
+    });
+    notification.onclick = click;
   }
 
   public isElectron() {

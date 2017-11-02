@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('pork-ng4-template App', () => {
+describe('pork-ngx-template App', () => {
   let page: AppPage;
 
   beforeEach(() => {

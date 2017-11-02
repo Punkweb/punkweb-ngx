@@ -1,71 +1,104 @@
 const { app, BrowserWindow, ipcMain, Tray, Menu, dialog } = require('electron');
 const url = require('url');
+const storage = require('electron-json-storage');
 
-let win;
-const args = process.argv.slice(1);
-let serve = args.some(val => val === '--serve');
-let showCloseMessage = true;
+const ARGS = process.argv.slice(1);
+const DEBUG = ARGS.some(val => val === '--debug');
+const DEV_URL = 'http://localhost:4200';
+const PROD_URL = 'https://www.google.com';
+const APP_ICON = `${__dirname}/app-48x48.png`;
+const TRAY_ICON = `${__dirname}/app-24x24.png`
 
-if (serve) {
-  require('electron-reload')(__dirname, {
-    electron: require('${__dirname}/../../node_modules/electron')
-  })
+let win, settings;
+
+let defaultSettings = {
+  showCloseMessage: true,
+};
+
+let settingsFilePromise = new Promise((resolve, reject) => {
+  try {
+    storage.get('settings', (err, data) => {
+      if (err) throw err;
+      resolve(data);
+    });
+  } catch (exception) {
+    reject(exception);
+  }
+}).then((userSettings) => {
+  settings = Object.assign({}, defaultSettings, userSettings);
+});
+
+function updateSetting(key, value, callback = (err, data) => {}) {
+  settings[key] = value;
+  storage.set('settings', settings, callback);
+}
+
+function closeDialog(callback) {
+  const closeDialogConfig = {
+    title: 'Are you sure you want to close the app?',
+    message: `You have unsaved data that would be lost from closing the application, are you sure you want to continue?`,
+    checkboxLabel: `Don't show me this again`,
+    buttons: ['Cancel', 'Ok'],
+    icon: APP_ICON,
+  };
+  dialog.showMessageBox(closeDialogConfig, callback);
+}
+
+function createWindow() {
+  const winConfig = {
+    autoHideMenuBar: true,
+    useContentSize: true,
+    icon: APP_ICON,
+    height: 9 * 90,
+    width: 16 * 90,
+  };
+  win = new BrowserWindow(winConfig);
+
+  if (DEBUG) {
+    win.loadURL(DEV_URL);
+  } else {
+    win.load(PROD_URL);
+  }
+
+  win.on('close', (event) => {
+    if (settings.showCloseMessage) {
+      event.preventDefault();
+      let close = new Promise((resolve, reject) => {
+        try {
+          closeDialog((res, check) => {
+            if (check) {
+              updateSetting('showCloseMessage', false, {
+                if (err) {
+                  console.error(err);
+                }
+              });
+            }
+            if (res === 1) {
+              resolve(true);
+            } else {
+              resolve(false);
+            }
+          });
+        } catch (exception) {
+          reject(exception);
+        }
+      }).then((kill) => {
+        if (kill) {
+          win.destroy();
+          win = null;
+        }
+      });
+    }
+  });
 }
 
 ipcMain.on('ping', (event, arg) => {
-  event.sender.send('pong');
+  console.log(arg);
+  event.sender.send('pong', 'pong');
 });
 
-function createWindow() {
-  let windowConfig = {
-    autoHideMenuBar: true,
-    useContentSize: true,
-    height: 9 * 80,
-    maxHeight: 9 * 80,
-    minHeight: 9 * 80,
-    width: 16 * 80,
-    maxWidth: 16 * 80,
-    minWidth: 16 * 80,
-    resizable: false,
-    fullscreenable: false,
-  };
-  win = new BrowserWindow(windowConfig);
-  win.loadURL('http://localhost:4200');
-
-  win.on('close', (event) => {
-    event.preventDefault();
-    win.hide();
-    appCloseDialog();
-  });
-
-  win.on('closed', () => {
-    win = null;
-  });
-}
-
-function appCloseDialog() {
-  if (showCloseMessage) {
-    let closeMessage =
-      `The app is running in the background.\nTo show the main window, right click the icon in the system tray.`
-    let properties = {
-      title: 'App still running',
-      message: closeMessage,
-      checkboxLabel: `Got it, don't show me this again`,
-      // icon: 'path/to/icon', // TODO
-    };
-    callback = (res, check) => {
-      if (check) {
-        showCloseMessage = false;
-        // TODO: Store a json setting so that this persists.
-      }
-    };
-    dialog.showMessageBox(properties, callback);
-  }
-}
-
 app.on('ready', () => {
-  tray = new Tray('electronDist/callpop.png');
-  const contextMenu = Menu.buildFromTemplate([
+  const trayMenu = Menu.buildFromTemplate([
     {
       label: 'Show App',
       click: (event) => {
@@ -75,12 +108,13 @@ app.on('ready', () => {
     {
       label: 'Quit',
       click: (event) => {
-        win.destroy();
+        win.close();
       }
     },
   ]);
-  tray.setToolTip('Porks Ng4 Template');
-  tray.setContextMenu(contextMenu);
+  tray = new Tray(TRAY_ICON);
+  tray.setToolTip('Porks Ngx Template');
+  tray.setContextMenu(trayMenu);
   createWindow();
 });
 
