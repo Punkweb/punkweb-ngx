@@ -37,7 +37,7 @@ export class ElectronService {
   }
 
   public notify(title: string, body: string, click = () => {}) {
-    let notification = new Notification(title, {
+    const notification = new Notification(title, {
       body: body
     });
     notification.onclick = click;

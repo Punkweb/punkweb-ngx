@@ -35,6 +35,7 @@ import {
   ElectronService,
   HttpService,
   SanitizeService,
+  WebsocketService,
 } from './services';
 
 @NgModule({
@@ -70,6 +71,7 @@ import {
     ElectronService,
     HttpService,
     SanitizeService,
+    WebsocketService,
   ],
   entryComponents: [
     SignUpModalComponent,

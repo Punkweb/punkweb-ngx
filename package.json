@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-electron": "cp src/electron/* electronDist/ && cp src/assets/* electronDist/",
+    "build-electron": "cp src/electron/* electronDist/ && cp src/assets/* electronDist/ && cp src/assets/* electronDist/",
     "electron": "npm run build-electron && electron electronDist/ --debug",
     "test": "ng test",
     "lint": "ng lint",
