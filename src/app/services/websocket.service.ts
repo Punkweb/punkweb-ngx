@@ -39,7 +39,6 @@ class WebsocketConnection {
   }
 
   public send(message: any) {
-    // Check for instance and
     this.instance.send(message);
   }
 
@@ -69,5 +68,4 @@ export class WebsocketService {
     };
     this.connection.open();
   }
-
 }

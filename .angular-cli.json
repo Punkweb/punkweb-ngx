@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "pork-ngx-template"
+    "name": "porks-ngx-template"
   },
   "apps": [
     {
