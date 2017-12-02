@@ -32,15 +32,15 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running electron
 
-Run `npm run electron` to build and run the project as an Electron app.
+Run `npm run electron` to build and run the project as an electron app.
 Before running electron make sure you are serving the app via `ng serve`.
 
 ##### Electron notes
 
-This doesn't compile and then package the entire angular app into an electron app and isn't intended for strictly electron apps.
-The focus here is to be able to have a desktop app for your web app out of the box.  It's used here more as a wrapper that points at the given url.
+This doesn't compile and then package the entire angular project into an electron app and isn't intended for strictly electron development.
+The focus here is to be able to have a desktop version for your web app out of the box.  It's used here more as a wrapper that points at the given url.
 It can detect whether or not the app is running in electron or the browser, and necessary changes can be made with that assertion.
-Your angular code and electron code exist as separate entities, and don't clutter each other, but can communicate flawlessly through IPC.
+Your angular electron code exist as separate entities, and don't clutter each other, but can communicate flawlessly through IPC.
 Also, electron can be very easily removed or just not used if your use case doesn't demand it!
 
 ## Running unit tests

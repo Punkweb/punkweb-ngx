@@ -113,7 +113,7 @@ app.on('ready', () => {
     },
   ]);
   tray = new Tray(TRAY_ICON);
-  tray.setToolTip('Porks Ngx Template');
+  tray.setToolTip('porks-ngx-template');
   tray.setContextMenu(trayMenu);
   createWindow();
 });
