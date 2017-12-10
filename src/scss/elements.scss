@@ -10,13 +10,6 @@
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans';
-  font-weight: 500;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
 hr {
   background-color: $oc-gray-4;
   border: 0;
@@ -264,17 +257,10 @@ progress::-webkit-progress-value {
 }
 
 @mixin button($background, $color) {
-  @include gradient-animation(
-    lighten($background, 5%),
-    darken($background, 5%),
-    lighten($background, 10%),
-    darken($background, 10%),
-    .4s
- );
   @include medium;
   appearance: none;
-  // background-color: $background;
-  border: 1px solid mix(black, $background, 20%);
+  background-color: $background;
+  border: 1px solid mix(black, $background, 5%);
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
   color: $color !important;
@@ -288,18 +274,12 @@ progress::-webkit-progress-value {
   min-width: 100px;
   text-align: center;
   text-decoration: none !important;
-  transition: all .25s ease-in-out;
+  transition: all .25s ease;
   &:hover {
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2), 0px 0px 6px rgba(0, 0, 0, .4);
+    background-color: mix(black, $background, 10%);
   }
   &:disabled {
-    @include gradient-animation(
-      $oc-gray-5,
-      $oc-gray-5,
-      $oc-gray-5,
-      $oc-gray-5,
-      .4s
-   );
+    background-color: $oc-gray-5;
     border: 1px solid $oc-gray-6;
     cursor: not-allowed;
     &:hover {
@@ -340,7 +320,7 @@ progress::-webkit-progress-value {
     @include button($oc-red-9, white);
   }
   &-orange {
-    @include button($oc-orange-9, black);
+    @include button($oc-orange-9, white);
   }
 }
 
