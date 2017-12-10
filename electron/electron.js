@@ -6,8 +6,8 @@ const ARGS = process.argv.slice(1);
 const DEBUG = ARGS.some(val => val === '--debug');
 const DEV_URL = 'http://localhost:4200';
 const PROD_URL = 'https://www.google.com';
-const APP_ICON = `${__dirname}/app-48x48.png`;
-const TRAY_ICON = `${__dirname}/app-24x24.png`
+const APP_ICON = `${__dirname}/img/app-48x48.png`;
+const TRAY_ICON = `${__dirname}/img/app-24x24.png`
 
 let win, settings;
 
@@ -57,7 +57,7 @@ function createWindow() {
   if (DEBUG) {
     win.loadURL(DEV_URL);
   } else {
-    win.load(PROD_URL);
+    win.loadURL(PROD_URL);
   }
 
   win.on('close', (event) => {
