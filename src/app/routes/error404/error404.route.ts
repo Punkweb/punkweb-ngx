@@ -19,6 +19,6 @@ export class Error404Component implements OnInit {
   }
 
   public routeHome() {
-    this.router.navigate(['/board']);
+    this.router.navigate(['/']);
   }
 }
