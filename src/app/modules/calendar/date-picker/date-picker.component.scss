@@ -1,0 +1,85 @@
+@import '~scss/mixins';
+
+.datePicker {
+  padding: 1rem;
+}
+
+.navigate {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__button {
+    background-color: white;
+    border: 1.5px solid $gray;
+    border-radius: 50%;
+    box-shadow: none;
+    color: $gray;
+    font-size: 10px;
+    padding: .4rem;
+    transition: all .2s ease-in-out;
+    &:hover {
+      background-color: $gray;
+      color: white;
+    }
+  }
+  &__month {
+    @include bold;
+    @include font-range(16, 20);
+    letter-spacing: 0.9px;
+    color: $gray-dk;
+  }
+}
+
+.calendar {
+  margin: 1.5rem 0;
+
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    thead {
+      tr {
+
+      }
+      th {
+        @include bold;
+        @include font-range(14, 16);
+        color: $gray;
+        line-height: 1.21;
+        opacity: .65;
+      }
+    }
+    tbody {
+      tr {
+
+      }
+      td {
+        color: $gray-dk;
+        cursor: pointer;
+        font-size: 11px;
+        padding: .5rem 0;
+        text-align: center;
+      }
+    }
+  }
+  &__selected {
+    color: white !important;
+    position: relative;
+    &:before {
+      content: "";
+      background-color: $gray;
+      border-radius: 100px;
+      position: absolute;
+      top: calc(50% - 15px);
+      left: calc(50% - 15px);
+      height: 30px;
+      width: 30px;
+      z-index: -1;
+    }
+  }
+  &__between {
+    background-color: rgba($gray, .37);
+    color: $gray-dk !important;
+  }
+}

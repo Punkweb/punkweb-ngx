@@ -1,0 +1,31 @@
+<div class="datePicker">
+  <div class="navigate">
+    <button class="button button--rounded navigate__button navigate__button--left" (click)="back()">
+      <i class="ss-navigateleft"></i>
+    </button>
+    <div class="navigate__month">{{formatHeader()}}</div>
+    <button class="button button--rounded navigate__button navigate__button--right" (click)="forward()">
+      <i class="ss-navigateright"></i>
+    </button>
+  </div>
+  <div class="calendar">
+    <table>
+      <thead>
+        <tr>
+          <th>S</th>
+          <th>M</th>
+          <th>T</th>
+          <th>W</th>
+          <th>T</th>
+          <th>F</th>
+          <th>S</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let week of weekChunk()">
+          <td *ngFor="let day of week" [ngClass]="{'calendar__selected': dayIsSelected(day)}" (click)="clickDay(day)">{{day}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

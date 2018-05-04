@@ -1,0 +1,30 @@
+<div class="dateRange">
+  <div class="dateRange__flex">
+    <div class="segment">
+      <div class="segment__content" (click)="openDatePicker()">
+        <i class="ss-calendar"></i>
+        <span>{{startDate | date:'MMM d, y'}}</span><span> - </span><span>{{endDate | date:'MMM d, y'}}</span>
+      </div>
+      <app-popover [(visible)]="datePickerVisible" [options]="datePickerOptions">
+        <div class="popover__flex">
+          <app-date-picker [(selected)]="startDate"></app-date-picker>
+          <app-date-picker [(selected)]="endDate"></app-date-picker>
+        </div>
+      </app-popover>
+    </div>
+    <div class="segment">
+      <div class="segment__content" (click)="openDateSegment()">
+        <div class="segment__selected">{{selectedRange()}}</div>
+        <i class="ss-navigatedown"></i>
+      </div>
+      <app-popover [(visible)]="dateSegmentVisible" [options]="dropdownOptions">
+        <div class="popover__item" (click)="setRange('today')">Today</div>
+        <div class="popover__item" (click)="setRange('week')">This Week</div>
+        <div class="popover__item" (click)="setRange('month')">This Month</div>
+        <div class="popover__item" (click)="setRange('year')">This Year</div>
+        <div class="popover__item" (click)="setRange('twoWeeks')">Two weeks</div>
+        <div class="popover__item" (click)="setRange('all')">All</div>
+      </app-popover>
+    </div>
+  </div>
+</div>

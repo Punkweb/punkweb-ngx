@@ -6,8 +6,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CalendarModule } from './modules/calendar/calendar.module';
 import { CodeMirrorModule } from './modules/codemirror/codemirror.module';
 import { ModalsModule } from './modules/modals/modals.module';
+import { PopoverModule } from './modules/popover/popover.module';
 
 // Main app
 import { AppComponent } from './app.component';
@@ -46,8 +48,10 @@ import {
     RouterModule,
     FormsModule,
     AppRoutingModule,
+    CalendarModule,
     CodeMirrorModule,
     ModalsModule,
+    PopoverModule,
   ],
   declarations: [
     AppComponent,

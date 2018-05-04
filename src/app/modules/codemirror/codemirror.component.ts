@@ -51,7 +51,7 @@ export class CodeMirrorComponent implements AfterViewInit {
   private optionDefaults = {
     indentUnit: 2,
     lineNumbers: true,
-    mode: 'bbcode',
+    mode: 'javascript',
     theme: 'monokai'
   };
 

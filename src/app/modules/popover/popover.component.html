@@ -1,0 +1,20 @@
+<div class="popover" [hidden]="!visible" [ngStyle]="{
+      'animation': options.animation,
+      'background-color': options.backgroundColor,
+      'color': options.fontColor,
+      'border': options.border,
+      'border-radius': options.borderRadius,
+      'font-size': options.fontSize,
+      'font-family': options.fontFamily,
+      'top': options.relativeTop,
+      'left': options.relativeLeft,
+      'bottom': options.relativeBottom,
+      'right': options.relativeRight,
+      'width': options.width,
+      'z-index': options.zIndex
+    }">
+  <div class="popover__content">
+    <ng-content></ng-content>
+  </div>
+</div>
+<div class="popover__overlay" *ngIf="visible" (click)="close()"></div>
