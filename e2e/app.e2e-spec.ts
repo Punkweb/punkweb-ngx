@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('punkweb-ngx-template App', () => {
+describe('punkweb-ngx App', () => {
   let page: AppPage;
 
   beforeEach(() => {

@@ -10,12 +10,12 @@ export class ElectronService {
     if (this.isElectron()) {
       this.instance = window['electron'];
       this.ipcRenderer = this.instance.ipcRenderer;
-      this.notify('punkweb-ngx-template', 'Ipc renderer up and running. Click this notification to play ping pong.', () => {
+      this.notify('punkweb-ngx', 'Ipc renderer up and running. Click this notification to play ping pong.', () => {
         this.sendIpcEvent('ping', 'ping');
       });
       // Play ping pong with IPC
       this.registerIpcReceiver('pong', (event, arg) => {
-        this.notify('punkweb-ngx-template', arg, () => {
+        this.notify('punkweb-ngx', arg, () => {
           this.sendIpcEvent('ping', 'ping');
         });
       });

@@ -1,6 +1,6 @@
-# punkweb-ngx-template
+# punkweb-ngx
 
-[![Build Status](https://travis-ci.org/shakedown-street/punkweb-ngx-template.svg?branch=master)](https://travis-ci.org/shakedown-street/punkweb-ngx-template)
+[![Build Status](https://travis-ci.org/Punkweb/punkweb-ngx.svg?branch=master)](https://travis-ci.org/Punkweb/punkweb-ngx)
 
 Full featured and intended to keep project structure organized and consistent.
 

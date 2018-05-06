@@ -113,7 +113,7 @@ app.on('ready', () => {
     },
   ]);
   tray = new Tray(TRAY_ICON);
-  tray.setToolTip('punkweb-ngx-template');
+  tray.setToolTip('punkweb-ngx');
   tray.setContextMenu(trayMenu);
   createWindow();
 });
