@@ -33,25 +33,13 @@ export class CodeMirrorComponent implements AfterViewInit {
 
   private _value = '';
 
-  get value() {
-    return this._value;
-  }
-
-  @Input()
-  set value(_value) {
-    if (_value !== this._value) {
-      this._value = _value;
-      this.onChange(_value);
-    }
-  }
-
   @Output()
   public change = new EventEmitter();
 
   private optionDefaults = {
     indentUnit: 2,
     lineNumbers: true,
-    mode: 'javascript',
+    mode: 'bbcode',
     theme: 'monokai'
   };
 
@@ -88,5 +76,17 @@ export class CodeMirrorComponent implements AfterViewInit {
 
   public registerOnTouched(fn) {
     this.onTouched = fn;
+  }
+
+  @Input()
+  get value() {
+    return this._value;
+  }
+
+  set value(_value) {
+    if (_value !== this._value) {
+      this._value = _value;
+      this.onChange(_value);
+    }
   }
 }

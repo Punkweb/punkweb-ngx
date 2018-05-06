@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { PopoverOptions } from '../../popover';
 import * as moment from 'moment';
 
@@ -16,14 +16,20 @@ export class DateRangeComponent {
   public dateSegmentVisible = false;
   public datePickerVisible = false;
   public datePickerDefaults: PopoverOptions = {
-    relativeTop: '62px',
+    relativeTop: '29px',
     width: '685px',
   };
   public datePickerOptions = this.datePickerDefaults;
   public dropdownOptions: PopoverOptions = {
-    relativeTop: '62px',
+    relativeTop: '29px',
     width: '200px',
   };
+
+  @ViewChild('startDatePicker')
+  public startDatePicker;
+
+  @ViewChild('endDatePicker')
+  public endDatePicker;
 
   @Output()
   public startDateChange = new EventEmitter();

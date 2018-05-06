@@ -1,12 +1,12 @@
 @import '~scss/mixins';
-@import '~scss/variables';
+@import '~scss/theming';
 
 .popover {
   background-color: white;
   box-shadow: 0 4px 21px 3px rgba(0, 0, 0, 0.11);
-  border: 1px solid $border;
+  border: 1px solid $hr;
   border-radius: 4px;
-  color: $gray-dk;
+  color: $oc-gray-8;
   cursor: default;
   font-size: 1em;
   font-family: 'Roboto';

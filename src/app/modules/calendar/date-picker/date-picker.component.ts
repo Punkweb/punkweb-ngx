@@ -104,5 +104,8 @@ export class DatePickerComponent {
   public set selected(value) {
     this._selected = value;
     this.selectedChange.emit(this._selected);
+    this.currentMonth = this._selected.month();
+    this.currentYear = this._selected.year();
+    this.daysInMonth = this._selected.daysInMonth();
   }
 }
