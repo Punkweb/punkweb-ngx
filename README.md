@@ -6,16 +6,15 @@ Full featured and intended to keep project structure organized and consistent.
 
 ### Features
 
-* Clean project structure - based on components, modules, routes and services.
-* Electron integrated and entirely separate from Angular code - flawlessly communicates through IPC.
-* Http service - deprecated to some degree from HttpClient as it's really just a wrapper around it now.
+* Clean project structure.
+* Electron integrated and flawlessly communicates with Angular through IPC.
 * API service - easily communicate with REST backends - CRUD operations.
-* Auth service - simple token authentication with ability to login/logout and `GET` the current user.
-* Websocket service - easily manage websocket connections that have the ability to automatically reconnect when connection is lost.
-* Token authentication - makes use of the new `@angular/common/http` `HttpInterceptor` to set token headers rather than auth logic.
+* Auth service - simple token authentication service.
+* Websocket service - easily manage websocket connections.
 * Modal module - globally accessible service to open any component as a modal - generic confirm modal.
-* Codemirror module - a wrapper for codemirror - can be easily removed if not needed.
-* Scss styling - helpful mixins and layout classes - typography - breakpoints - themeable - swatches - looks really nice out of the box!
+* Calendar module - customizable date picker and date range components.
+* Popover module - easily create tooltips, dropdowns, and popovers.
+* Conforms with the punkweb styleguide - looks really nice out of the box - white labled and easily themeable.
 * e2e and unit tests run headless and are able to pass CI testing (Travis and Gitlab tested).
 
 ## Install deps

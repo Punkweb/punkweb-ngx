@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <a class="sidebar-item" routerLink="/" routerLinkActive="sidebar-item--active">
+  <a class="sidebar-item" [routerLink]="['/']" routerLinkActive="sidebar-item--active" [routerLinkActiveOptions]="{exact: true}">
     <i class="fa fa-home" aria-hidden="true"></i><span>Home</span>
   </a>
 </div>

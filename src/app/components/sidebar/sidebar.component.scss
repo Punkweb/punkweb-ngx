@@ -23,7 +23,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     i {
-      color: white;
+      color: black;
       font-size: 18px;
     }
     span {
@@ -31,6 +31,9 @@
     }
     &--active {
       box-shadow: inset 48px 0 0 0 $primary-blacken-20;
+      i {
+        color: white;
+      }
     }
     &:active, &:hover {
       background-color: darken($body-background, 5%);
