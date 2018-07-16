@@ -45,10 +45,16 @@ export class AuthService {
   }
 
   public getUser() {
-    this.http.get(`${this.usersUrl}${this.getAuthToken().id}/`).subscribe((user) => {
-      this.user = user;
-      this.user$.next(user);
-    });
+    let fetchSub = this.http.get(`${this.usersUrl}${this.getAuthToken().id}/`).subscribe(
+      (user) => {
+        this.user = user;
+        this.user$.next(user);
+      },
+      (err) => {},
+      () => {
+        fetchSub.unsubscribe();
+      }
+    );
   }
 
   public getAuthToken() {

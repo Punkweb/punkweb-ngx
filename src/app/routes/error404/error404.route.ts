@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,13 +6,11 @@ import { Router } from '@angular/router';
   'templateUrl': './error404.route.html',
   'styleUrls': ['./error404.route.scss']
 })
-export class Error404Component implements OnInit {
+export class Error404Component {
 
   constructor(
     private router: Router,
   ) { }
-
-  public ngOnInit() { }
 
   public goBack() {
     window.history.back();

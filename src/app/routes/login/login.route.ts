@@ -37,7 +37,7 @@ export class LoginComponent {
   }
 
   public signIn() {
-    this.auth.login(this.username, this.password)
+    let signInSub = this.auth.login(this.username, this.password)
       .subscribe(
         (res) => {
           this.router.navigate(['/']);
@@ -47,6 +47,9 @@ export class LoginComponent {
           if (error.non_field_errors) {
             this.errorMessage = error.non_field_errors[0];
           }
+        },
+        () => {
+          signInSub.unsubscribe();
         }
       );
   }

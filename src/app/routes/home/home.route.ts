@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 import { ModalService, ConfirmModalComponent } from '../../modules/modals';
 import { ApiService, AuthService, ElectronService } from '../../services';
 
@@ -7,10 +8,12 @@ import { ApiService, AuthService, ElectronService } from '../../services';
   templateUrl: './home.route.html',
   styleUrls: ['./home.route.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnDestroy, OnInit {
 
-  public user: any = {};
+  public user = null;
   public codemirrorValue = '[b]Bbcode CodeMirror mode[/b]';
+
+  private authSub: Subscription = null;
 
   constructor(
     private modals: ModalService,
@@ -21,6 +24,18 @@ export class HomeComponent {
     this.auth.user$.subscribe((user) => {
       this.user = user;
     });
+  }
+
+  public ngOnInit() {
+    this.authSub = this.auth.user$.subscribe((user) => {
+      this.user = user;
+    });
+  }
+
+  public ngOnDestroy() {
+    if (this.authSub) {
+      this.authSub.unsubscribe();
+    }
   }
 
   public openModal() {

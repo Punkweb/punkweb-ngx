@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 import { ModalService } from '../../modules/modals';
 import { AuthService } from '../../services';
 
@@ -8,21 +9,31 @@ import { AuthService } from '../../services';
   'templateUrl': './sidebar.component.html',
   'styleUrls': ['./sidebar.component.scss']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnDestroy, OnInit {
 
-  public authUser = this.auth.user$.asObservable();
-
+  public user = null;
   public authenticated = false;
   public superuser = false;
+
+  private authSub: Subscription = null;
 
   constructor(
     private router: Router,
     private modals: ModalService,
     private auth: AuthService,
-  ) {
-    this.authUser.subscribe((user) => {
+  ) { }
+
+  public ngOnInit() {
+    this.authSub = this.auth.user$.subscribe((user) => {
+      this.user = user;
       this.authenticated = !!user.id;
       this.superuser = user.is_superuser;
     });
+  }
+
+  public ngOnDestroy() {
+    if (this.authSub) {
+      this.authSub.unsubscribe();
+    }
   }
 }
