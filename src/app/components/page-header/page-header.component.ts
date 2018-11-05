@@ -8,9 +8,6 @@ import { Component, Input } from '@angular/core';
 export class PageHeaderComponent {
 
   @Input()
-  public title = 'Page';
-
-  @Input()
   public breadcrumbs: any[] = [];
 
   constructor() {}

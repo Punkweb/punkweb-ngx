@@ -2,14 +2,11 @@
 @import '~scss/theming';
 
 .popover {
-  background-color: white;
   box-shadow: 0 4px 21px 3px rgba(0, 0, 0, 0.11);
-  border: 1px solid $hr;
   border-radius: 4px;
-  color: $oc-gray-8;
+  color: $default-text;
   cursor: default;
   font-size: 1em;
-  font-family: 'Roboto';
   line-height: 1em;
   position: absolute;
   width: auto;

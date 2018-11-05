@@ -2,7 +2,14 @@
 @import '~scss/theming';
 
 .sidebar {
-  background-color: $body-background;
+  background-blend-mode: multiply, normal;
+  background-image: radial-gradient(circle at 0 50%, #4a5dff, #a86dff),
+                    linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.65)),
+                    radial-gradient(circle at 50% 40%,
+                    rgba(255, 255, 255, 0.7),
+                    rgba(0, 0, 0, 0.5));
   box-shadow: 0 2px 16px rgba($oc-gray-9, .5);
   color: $default-text;
   height: 100%;
@@ -12,7 +19,7 @@
   width: 12rem;
   &-item {
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    border-bottom: 1px solid $hr;
     color: $default-text;
     cursor: pointer;
     display: flex;
@@ -23,20 +30,20 @@
     overflow-x: hidden;
     overflow-y: auto;
     i {
-      color: black;
+      color: $default-text;
       font-size: 18px;
     }
     span {
       margin-left: 2rem;
     }
     &--active {
-      box-shadow: inset 48px 0 0 0 $primary-blacken-20;
+      box-shadow: inset 48px 0 0 0 $primary;
       i {
         color: white;
       }
     }
-    &:active, &:hover {
-      background-color: darken($body-background, 5%);
-    }
+    // &:active, &:hover {
+    //   background-color: darken($body-background, 5%);
+    // }
   }
 }

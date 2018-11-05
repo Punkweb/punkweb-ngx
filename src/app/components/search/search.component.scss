@@ -1,0 +1,26 @@
+@import '~scss/mixins';
+@import '~scss/theming';
+
+.search {
+  border-left: 1px solid $hr;
+  border-right: 1px solid $hr;
+  position: relative;
+  height: 64px;
+  &Container {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  &Icon {
+    font-size: 24px;
+    position: absolute;
+    left: 1rem;
+    top: .75rem;
+  }
+  &Input {
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    padding-left: 4rem;
+    height: 64px;
+    width: 100%;
+  }
+}

@@ -1,4 +1,4 @@
-<app-page-header [title]="'Home'"></app-page-header>
+<!-- <app-page-header></app-page-header> -->
 <div class="container">
   <div class="panel">
     <div class="panel-header">
@@ -6,21 +6,17 @@
     </div>
     <div class="panel-body padding">
       <ul class="pagination">
-        <li><i class="fa fa-angle-double-left"></i></li>
-        <li><i class="fa fa-angle-left"></i></li>
-        <li>1</li>
-        <li>2</li>
-        <li class="active">3</li>
-        <li class="disabled"><i class="fa fa-angle-double-right"></i></li>
-        <li class="disabled"><i class="fa fa-angle-right"></i></li>
+        <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+        <li>24 of 24</li>
+        <li class="disabled"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+        <li class="disabled"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
       </ul>
       <p *ngIf="user.email">Hello {{user.email}}</p>
       <p *ngIf="electron.isElectron()">App <strong>IS</strong> running on electron</p>
       <p *ngIf="!electron.isElectron()">App is <strong>NOT</strong> running on electron</p>
       <button class="button-primary" (click)="openModal()">Open Modal</button>
-      <button class="button-green" (click)="openModal()">Open Modal</button>
-      <button class="button-red" (click)="openModal()">Open Modal</button>
-      <button class="button-orange" (click)="openModal()">Open Modal</button>
+      <button class="button-hollow-primary" (click)="openModal()">Open Modal</button>
       <hr />
       <input class="margin-bottom" type="text" name="" value="">
       <app-date-range class="margin-bottom"></app-date-range>

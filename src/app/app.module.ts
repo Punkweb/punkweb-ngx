@@ -25,6 +25,7 @@ import {
 import {
   NavComponent,
   PageHeaderComponent,
+  SearchComponent,
   SidebarComponent,
   SignUpModalComponent,
 } from './components';
@@ -62,6 +63,7 @@ import {
     // Components
     NavComponent,
     PageHeaderComponent,
+    SearchComponent,
     SidebarComponent,
     SignUpModalComponent,
   ],

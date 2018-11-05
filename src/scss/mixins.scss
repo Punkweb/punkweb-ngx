@@ -31,7 +31,7 @@
   }
 
   &::-webkit-scrollbar-track {
-    background-color: mix(black, $body-background, 30%);
+    background-color: mix(black, $primary, 30%);
   }
 
   &::-webkit-scrollbar-thumb {

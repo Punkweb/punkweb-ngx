@@ -2,15 +2,7 @@
 @import 'layout';
 @import 'theming';
 @import 'mixins';
-@import 'typography';
 @import 'elements';
-
-html, body {
-  background-color: $body-background;
-  margin: 0;
-  padding: 0;
-  min-width: 320px;
-}
 
 * {
   @include scrollbar;

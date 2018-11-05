@@ -28,9 +28,9 @@ export class PopoverComponent {
 
   private defaultOptions: PopoverOptions = {
     animation: 'scaleIn .4s',
-    backgroundColor: 'white',
-    fontColor: '#343a40',
-    border: '1px solid #dcdcdc',
+    backgroundColor: '#474167',
+    fontColor: '',
+    border: 'none',
     borderRadius: '4px',
     fontSize: '1em',
     fontFamily: `'Roboto', sans-serif`,
